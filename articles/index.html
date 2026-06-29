@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles — On Retainer</title>
+  <meta name="description" content="Commercial law insights for Australian founders and SMEs. Practical, plain-language articles on contracts, IP, employment, and business risk." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .page-header {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 6rem 4rem 3rem;
+    }
+
+    .page-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      color: var(--parchment);
+      margin-bottom: 1rem;
+    }
+
+    .page-header p {
+      font-size: 0.95rem;
+      color: var(--slate);
+      max-width: 500px;
+      line-height: 1.8;
+    }
+
+    /* ── ARTICLE LIST ── */
+    .article-list {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem 4rem 6rem;
+    }
+
+    .article-item {
+      display: grid;
+      grid-template-columns: 7rem 1fr;
+      gap: 2rem;
+      padding: 2.2rem 0;
+      border-top: 1px solid var(--seam);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .article-item:last-child { border-bottom: 1px solid var(--seam); }
+    .article-item:hover { opacity: 0.7; }
+
+    .article-date {
+      font-size: 0.75rem;
+      color: var(--slate);
+      letter-spacing: 0.05em;
+      padding-top: 0.2rem;
+      line-height: 1.5;
+    }
+
+    .article-title {
+      font-size: 1rem;
+      color: var(--parchment);
+      font-weight: 400;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .article-excerpt {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    .article-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--signal);
+      opacity: 0.7;
+      margin-top: 0.6rem;
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty {
+      padding: 4rem 0;
+      border-top: 1px solid var(--seam);
+    }
+
+    .empty p {
+      font-size: 0.9rem;
+      color: var(--slate);
+    }
+
+    .empty a {
+      color: var(--signal);
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .page-header { padding: 4rem 1.8rem 2rem; }
+      .article-list { padding: 1rem 1.8rem 4rem; }
+      .article-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .article-date { padding-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">On Retainer</a>
+    <ul class="nav-links">
+      <li><a href="/articles">Articles</a></li>
+      <li><a href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header fade-up">
+      <span class="eyebrow-slate">Commercial Law Insights</span>
+      <h1>Articles</h1>
+      <p>Plain-language writing on contracts, IP, employment, and business risk for Australian founders and SMEs.</p>
+    </div>
+
+    <div class="article-list">
+
+      <!-- ── PASTE NEW ARTICLES AT THE TOP ── -->
+      <!-- TEMPLATE:
+      <a class="article-item" href="/articles/YOUR-SLUG">
+        <span class="article-date">DD Mon YYYY</span>
+        <div>
+          <p class="article-title">Your Article Title Here</p>
+          <p class="article-excerpt">One or two sentence summary of what the article covers.</p>
+          <span class="article-tag">Contracts</span>
+        </div>
+      </a>
+      -->
+
+      <!-- EXAMPLE — delete this once you have real articles -->
+      <a class="article-item" href="/articles/saas-liability-clauses">
+        <span class="article-date">Coming soon</span>
+        <div>
+          <p class="article-title">The liability clause every SaaS founder should understand before signing</p>
+          <p class="article-excerpt">Uncapped liability provisions are the most common way early-stage founders expose their business. Here's what to look for.</p>
+          <span class="article-tag">Contracts</span>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <p class="disclaimer">General information published on this site is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+
+  <footer>
+    <p>On Retainer — Queensland, Australia</p>
+    <a href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a>
+  </footer>
+
+</body>
+</html>
