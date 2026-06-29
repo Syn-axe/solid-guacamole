@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>On Retainer — Fractional Commercial Counsel</title>
+  <meta name="description" content="Commercial law insights for Australian founders and SMEs. Launching 2027." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:      #0A0A0A;
+      --parchment: #F2EDE4;
+      --slate:     #8A8A80;
+      --seam:      #1E1E1C;
+      --signal:    #C8B89A;
+    }
+
+    html, body { height: 100%; font-size: 16px; }
+
+    body {
+      background: var(--void);
+      color: var(--parchment);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(200,184,154,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 85% 20%, rgba(200,184,154,0.04) 0%, transparent 60%);
+      animation: ambientDrift 25s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes ambientDrift {
+      0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+      33%  { transform: translate(3%, 2%) scale(1.03); opacity: 0.85; }
+      66%  { transform: translate(-2%, 3%) scale(0.98); opacity: 1; }
+      100% { transform: translate(1%, -2%) scale(1.02); opacity: 0.9; }
+    }
+
+    nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--parchment); }
+
+    .hero {
+      position: relative;
+      z-index: 10;
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .hero-inner {
+      width: 100%;
+      animation: fadeUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 2rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 4.2vw, 4rem);
+      line-height: 1.15;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-sub-heading {
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--slate);
+      margin-bottom: 2.8rem;
+    }
+
+    .signal-rule {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(to right, var(--signal), transparent);
+      opacity: 0.45;
+      margin-bottom: 3.2rem;
+      animation: expandRule 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+      transform-origin: left;
+    }
+
+    @keyframes expandRule {
+      from { transform: scaleX(0); opacity: 0; }
+      to   { transform: scaleX(1); opacity: 0.45; }
+    }
+
+    .hero-lower {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* LATEST ARTICLE */
+    .latest-article {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      max-width: 420px;
+      text-decoration: none;
+    }
+
+    .latest-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--slate);
+      opacity: 0.6;
+    }
+
+    .latest-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+      color: var(--parchment);
+      line-height: 1.3;
+      opacity: 0.75;
+      transition: opacity 0.2s;
+    }
+
+    .latest-article:hover .latest-title { opacity: 1; }
+
+    .latest-date {
+      font-size: 0.72rem;
+      color: var(--slate);
+      opacity: 0.5;
+      letter-spacing: 0.06em;
+    }
+
+    /* LAUNCH */
+    .launch-block {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+
+    .launch-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--signal);
+      flex-shrink: 0;
+      animation: pulse 3s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.85; box-shadow: 0 0 0 0 rgba(200,184,154,0.5); }
+      50%       { opacity: 0.3; box-shadow: 0 0 0 8px rgba(200,184,154,0); }
+    }
+
+    .launch-line {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 4.2vw, 4rem);
+      color: var(--signal);
+      opacity: 0.75;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    footer {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.8rem 4rem 2.2rem;
+      border-top: 1px solid var(--seam);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .disclaimer {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.55;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .footer-mark {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      opacity: 0.4;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 900px) {
+      h1 { font-size: clamp(2rem, 5vw, 3rem); }
+      .launch-line { font-size: clamp(2rem, 5vw, 3rem); white-space: normal; }
+    }
+
+    @media (max-width: 768px) {
+      nav { padding: 1.8rem; }
+      .hero { padding: 3rem 1.8rem; align-items: flex-start; }
+      .hero-lower { flex-direction: column; align-items: flex-start; gap: 2.5rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.5rem 1.8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before, .signal-rule { animation: none; }
+      .launch-dot { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="logo" href="/">On Retainer</a>
+    <ul class="nav-links">
+      <li><a href="/articles">Articles</a></li>
+      <li><a href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">Queensland, Australia</span>
+      <h1>Commercial Law Insights for Australian Founders & SMEs</h1>
+      <p class="hero-sub-heading">A modern resource for business leaders. Practical insights on contracts, commercial risk and legal developments.</p>
+      <div class="signal-rule"></div>
+      <div class="hero-lower">
+        <a class="latest-article" href="/articles/saas-liability-clauses">
+          <span class="latest-eyebrow">Latest</span>
+          <span class="latest-title">The liability clause every SaaS founder should understand before signing</span>
+          <span class="latest-date">Coming soon</span>
+        </a>
+        <div class="launch-block">
+          <span class="launch-dot"></span>
+          <div class="launch-line">Launching 2027</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p class="disclaimer">General information published on this site and associated channels is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+    <span class="footer-mark">QLD, Australia</span>
+  </footer>
+
+</body>
+</html>
