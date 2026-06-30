@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Intelligence — On Retainer</title>
+  <meta name="description" content="Practical legal guidance for Australian businesses. Search by topic, business decision or legal issue." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:      #0A0A0A;
+      --panel:     #111111;
+      --border:    #1E1E1C;
+      --parchment: #F2EDE4;
+      --slate:     #8A8A80;
+      --signal:    #C8B89A;
+
+      /* category colours — heavily desaturated */
+      --cat-contracts:   #C8B89A;
+      --cat-employment:  #8A9A7A;
+      --cat-privacy:     #7A8A9A;
+      --cat-ai:          #A07860;
+      --cat-governance:  #8A8880;
+      --cat-ip:          #9A8A7A;
+      --cat-disputes:    #8A7A7A;
+      --cat-directors:   #7A8870;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--void);
+      color: var(--parchment);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main { flex: 1; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.2rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--parchment); }
+
+    /* ── HERO ── */
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 6rem 4rem 4rem;
+      animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--slate);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      color: var(--parchment);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--slate);
+      margin-bottom: 3rem;
+      max-width: 520px;
+    }
+
+    /* ── SEARCH ── */
+    .search-wrap {
+      position: relative;
+      max-width: 680px;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--parchment);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      padding: 1.1rem 3.5rem 1.1rem 1.5rem;
+      outline: none;
+      transition: border-color 0.25s;
+      letter-spacing: 0.02em;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .search-input::placeholder { color: var(--slate); opacity: 0.6; }
+    .search-input:focus { border-color: var(--signal); }
+
+    .search-icon {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--slate);
+      opacity: 0.5;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 4rem;
+    }
+
+    .signal-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 4rem 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+    }
+
+    .section-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      opacity: 0.5;
+    }
+
+    /* ── COLLECTIONS ── */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .collection-item {
+      background: var(--void);
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.25s;
+      cursor: pointer;
+    }
+
+    .collection-item:hover { background: var(--panel); }
+
+    .collection-rule {
+      width: 2rem;
+      height: 2px;
+      margin-bottom: 0.3rem;
+      transition: width 0.3s;
+    }
+
+    .collection-item:hover .collection-rule { width: 3rem; }
+
+    .collection-name {
+      font-size: 0.85rem;
+      color: var(--parchment);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .collection-count {
+      font-size: 0.7rem;
+      color: var(--slate);
+      opacity: 0.5;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── BUSINESS DECISIONS ── */
+    .decisions-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .decision-item {
+      background: var(--void);
+      padding: 1.4rem 1.6rem;
+      font-size: 0.82rem;
+      color: var(--slate);
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+      transition: background 0.25s, color 0.25s;
+      cursor: pointer;
+    }
+
+    .decision-item:hover {
+      background: var(--panel);
+      color: var(--parchment);
+    }
+
+    .decision-prefix {
+      display: block;
+      font-size: 0.65rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--signal);
+      opacity: 0.6;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── ARTICLE CARDS ── */
+    .articles-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .article-card:last-child { border-bottom: 1px solid var(--border); }
+
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .article-card:hover::before { opacity: 1; }
+    .article-card:hover { background: rgba(242,237,228,0.015); }
+
+    /* category rule colours */
+    .cat-contracts::before  { background: var(--cat-contracts); }
+    .cat-employment::before { background: var(--cat-employment); }
+    .cat-privacy::before    { background: var(--cat-privacy); }
+    .cat-ai::before         { background: var(--cat-ai); }
+    .cat-governance::before { background: var(--cat-governance); }
+    .cat-ip::before         { background: var(--cat-ip); }
+    .cat-disputes::before   { background: var(--cat-disputes); }
+    .cat-directors::before  { background: var(--cat-directors); }
+
+    .article-main { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .article-category {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+    }
+
+    .cat-contracts  .article-category { color: var(--cat-contracts); }
+    .cat-employment .article-category { color: var(--cat-employment); }
+    .cat-privacy    .article-category { color: var(--cat-privacy); }
+    .cat-ai         .article-category { color: var(--cat-ai); }
+    .cat-governance .article-category { color: var(--cat-governance); }
+    .cat-ip         .article-category { color: var(--cat-ip); }
+    .cat-disputes   .article-category { color: var(--cat-disputes); }
+    .cat-directors  .article-category { color: var(--cat-directors); }
+
+    .article-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      color: var(--parchment);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .article-card:hover .article-title { opacity: 0.85; }
+
+    .article-summary {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .article-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .article-meta-item {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.5;
+      letter-spacing: 0.05em;
+    }
+
+    .article-meta-sep {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--slate);
+      opacity: 0.3;
+    }
+
+    .article-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      min-width: 120px;
+    }
+
+    .risk-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--border);
+      color: var(--slate);
+      opacity: 0.6;
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.8rem 4rem 2.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .disclaimer {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.5;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .footer-mark {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      opacity: 0.35;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .collections-grid  { grid-template-columns: repeat(2, 1fr); }
+      .decisions-grid    { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      nav, .hero, .section, .section-divider, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .hero { padding-top: 3.5rem; }
+      .collections-grid  { grid-template-columns: 1fr; }
+      .decisions-grid    { grid-template-columns: 1fr; }
+      .article-card      { grid-template-columns: 1fr; }
+      .article-aside     { flex-direction: row; align-items: center; margin-top: 0.8rem; }
+      footer             { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="logo" href="/">On Retainer</a>
+    <ul class="nav-links">
+      <li><a href="/articles">Intelligence</a></li>
+      <li><a href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- HERO + SEARCH -->
+    <div class="hero">
+      <span class="hero-eyebrow">On Retainer</span>
+      <h1>Legal Intelligence</h1>
+      <p class="hero-sub">Practical legal guidance for Australian businesses. Search by topic, business decision or legal issue.</p>
+      <div class="search-wrap">
+        <input class="search-input" type="text" placeholder="Search contracts, employment, privacy..." id="searchInput" />
+        <span class="search-icon">⌕</span>
+      </div>
+    </div>
+
+    <div class="section-divider"><div class="signal-rule"></div></div>
+
+    <!-- COLLECTIONS -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Collections</h2>
+        <span class="section-meta">Browse by practice area</span>
+      </div>
+      <div class="collections-grid">
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-contracts)"></div>
+          <span class="collection-name">Commercial Contracts</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-employment)"></div>
+          <span class="collection-name">Employment</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-privacy)"></div>
+          <span class="collection-name">Privacy</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-ai)"></div>
+          <span class="collection-name">Artificial Intelligence</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-governance)"></div>
+          <span class="collection-name">Governance</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-ip)"></div>
+          <span class="collection-name">Intellectual Property</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-directors)"></div>
+          <span class="collection-name">Director Duties</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+        <div class="collection-item">
+          <div class="collection-rule" style="background:var(--cat-disputes)"></div>
+          <span class="collection-name">Disputes</span>
+          <span class="collection-count">Coming soon</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"><div class="signal-rule"></div></div>
+
+    <!-- BROWSE BY BUSINESS DECISION -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Browse by Business Decision</h2>
+        <span class="section-meta">Find guidance for your situation</span>
+      </div>
+      <div class="decisions-grid">
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Hiring Employees
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Signing a Contract
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Terminating a Contract
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Raising Investment
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Protecting IP
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Using AI in My Business
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Buying a Business
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Resolving a Dispute
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Managing Employees
+        </div>
+        <div class="decision-item">
+          <span class="decision-prefix">I am</span>
+          Reviewing Director Responsibilities
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"><div class="signal-rule"></div></div>
+
+    <!-- RECENTLY UPDATED + BROWSE ALL -->
+    <div class="section">
+      <div class="section-header">
+        <h2 class="section-title">Recently Updated</h2>
+        <span class="section-meta">All Intelligence</span>
+      </div>
+
+      <div class="articles-list" id="articleList">
+
+        <!-- ── ADD NEW ARTICLES HERE — most recent at top ── -->
+
+        <a href="/articles/saas-liability-clauses" class="article-card cat-contracts">
+          <div class="article-main">
+            <span class="article-category">Commercial Contracts</span>
+            <span class="article-title">The liability clause every SaaS founder should understand before signing</span>
+            <span class="article-summary">Uncapped liability provisions are the most common way early-stage founders expose their business. Here is what to look for and how to respond.</span>
+            <div class="article-meta-row">
+              <span class="article-meta-item">5 min read</span>
+              <span class="article-meta-sep"></span>
+              <span class="article-meta-item">Last reviewed —</span>
+            </div>
+          </div>
+          <div class="article-aside">
+            <span class="risk-badge">High Risk</span>
+          </div>
+        </a>
+
+        <!-- END ARTICLES -->
+
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p class="disclaimer">General information published on this site is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+    <span class="footer-mark">QLD, Australia</span>
+  </footer>
+
+  <script>
+    // Simple client-side search
+    const input = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.article-card');
+
+    input.addEventListener('input', () => {
+      const q = input.value.toLowerCase().trim();
+      cards.forEach(card => {
+        const text = card.textContent.toLowerCase();
+        card.style.display = (!q || text.includes(q)) ? '' : 'none';
+      });
+    });
+  </script>
+
+</body>
+</html>
