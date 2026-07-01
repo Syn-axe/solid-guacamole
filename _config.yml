@@ -3,12 +3,12 @@ description: Legal Intelligence for Australian Founders and SMEs
 url: "https://onretainer.com.au"
 
 markdown: kramdown
-permalink: /Intelligence/:slug
+permalink: /Intelligence/:slug.html
 
 collections:
   articles:
     output: true
-    permalink: /Intelligence/:slug
+    permalink: /Intelligence/:slug.html
 
 defaults:
   - scope:
