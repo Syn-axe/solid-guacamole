@@ -28,3 +28,4 @@ Continue the article here.
 ## What This Means for Your Business
 
 Close with something concrete and actionable. Land on a clear takeaway. Do not trail off.
+Push both changes — the _config.yml update and this file — at the same time, wait for the green build, and test again.
