@@ -3,7 +3,6 @@ description: Legal Intelligence for Australian Founders and SMEs
 url: "https://onretainer.com.au"
 
 theme: null
-markdown: kramdown
 permalink: /Intelligence/:slug.html
 
 collections:
