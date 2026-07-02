@@ -36,9 +36,9 @@ This article explains how liability clauses operate under Australian law, the fo
 
 The leading Australian authority on the interpretation of exclusion and limitation clauses is Darlington Futures Ltd v Delco Australia Pty Ltd (1986) 161 CLR 500, a decision of the High Court of Australia. [^1] 
 
-The High Court confirmed that exclusion and limitation clauses are to be interpreted according to their natural and ordinary meaning, read in the context of the contract as a whole.[^2] Where ambiguity remains after applying ordinary principles of contractual interpretation, the contra proferentem rule may apply, so that the clause is construed against the party seeking to rely on it.[^3] 
+The High Court confirmed that exclusion and limitation clauses are to be interpreted according to their natural and ordinary meaning, read in the context of the contract as a whole. [^2] Where ambiguity remains after applying ordinary principles of contractual interpretation, the contra proferentem rule may apply, so that the clause is construed against the party seeking to rely on it. [^3] 
 
-Australian courts will give effect to exclusion and limitation clauses according to their clear terms and will not construe them as extending beyond what is expressed in clear and unambiguous language, read in context.[^4]
+Australian courts will give effect to exclusion and limitation clauses according to their clear terms and will not construe them as extending beyond what is expressed in clear and unambiguous language, read in context. [^4]
 
 ## Common structures in SaaS agreements 
 
@@ -82,7 +82,7 @@ Understanding how these clauses are structured and what legal framework applies 
 
 For advice specific to your circumstances, consult a qualified Australian legal practitioner.
 
-###Further reading 
+### Further reading 
 
 [^1] [Darlington Futures Ltd v Delco Australia Pty Ltd (1986) 161 CLR 500](https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html)
 
