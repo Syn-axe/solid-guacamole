@@ -5,9 +5,9 @@ summary: "A practical guide to liability clauses in SaaS agreements, explaining 
 
 category: "Commercial Contracts"
 
-cat\_color: "#C8B89A"
+cat_color: "#C8B89A"
 
-read\_time: "7 min read"
+read_time: "7 min read"
 
 risk: "High Risk"
 
