@@ -301,14 +301,14 @@ layout: null
     .article-card:hover::before { opacity: 1; }
     .article-card:hover { background: rgba(242,237,228,0.015); }
 
-    .article-card[data-cat="Commercial Contracts"]::before  { background: var(--cat-contracts); }
-    .article-card[data-cat="Employment"]::before            { background: var(--cat-employment); }
-    .article-card[data-cat="Privacy"]::before               { background: var(--cat-privacy); }
-    .article-card[data-cat="Artificial Intelligence"]::before { background: var(--cat-ai); }
-    .article-card[data-cat="Governance"]::before            { background: var(--cat-governance); }
-    .article-card[data-cat="Intellectual Property"]::before { background: var(--cat-ip); }
-    .article-card[data-cat="Disputes"]::before              { background: var(--cat-disputes); }
-    .article-card[data-cat="Director Duties"]::before       { background: var(--cat-directors); }
+    .article-card[data-cat="Commercial Contracts"]::before   { background: var(--cat-contracts); }
+    .article-card[data-cat="Employment"]::before             { background: var(--cat-employment); }
+    .article-card[data-cat="Privacy"]::before                { background: var(--cat-privacy); }
+    .article-card[data-cat="Artificial Intelligence"]::before{ background: var(--cat-ai); }
+    .article-card[data-cat="Governance"]::before             { background: var(--cat-governance); }
+    .article-card[data-cat="Intellectual Property"]::before  { background: var(--cat-ip); }
+    .article-card[data-cat="Disputes"]::before               { background: var(--cat-disputes); }
+    .article-card[data-cat="Director Duties"]::before        { background: var(--cat-directors); }
 
     .article-main { display: flex; flex-direction: column; gap: 0.5rem; }
 
@@ -320,13 +320,13 @@ layout: null
       color: var(--signal);
     }
 
-    .article-card[data-cat="Employment"] .article-category    { color: var(--cat-employment); }
-    .article-card[data-cat="Privacy"] .article-category       { color: var(--cat-privacy); }
+    .article-card[data-cat="Employment"] .article-category         { color: var(--cat-employment); }
+    .article-card[data-cat="Privacy"] .article-category            { color: var(--cat-privacy); }
     .article-card[data-cat="Artificial Intelligence"] .article-category { color: var(--cat-ai); }
-    .article-card[data-cat="Governance"] .article-category    { color: var(--cat-governance); }
+    .article-card[data-cat="Governance"] .article-category         { color: var(--cat-governance); }
     .article-card[data-cat="Intellectual Property"] .article-category { color: var(--cat-ip); }
-    .article-card[data-cat="Disputes"] .article-category      { color: var(--cat-disputes); }
-    .article-card[data-cat="Director Duties"] .article-category { color: var(--cat-directors); }
+    .article-card[data-cat="Disputes"] .article-category           { color: var(--cat-disputes); }
+    .article-card[data-cat="Director Duties"] .article-category    { color: var(--cat-directors); }
 
     .article-title {
       font-family: 'Cormorant Garamond', serif;
@@ -468,46 +468,55 @@ layout: null
         <span class="section-meta">Browse by practice area</span>
       </div>
       <div class="collections-grid">
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-contracts)"></div>
           <span class="collection-name">Commercial Contracts</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Commercial Contracts" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Commercial Contracts" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-employment)"></div>
           <span class="collection-name">Employment</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Employment" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Employment" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-privacy)"></div>
           <span class="collection-name">Privacy</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Privacy" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Privacy" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-ai)"></div>
           <span class="collection-name">Artificial Intelligence</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Artificial Intelligence" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Artificial Intelligence" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-governance)"></div>
           <span class="collection-name">Governance</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Governance" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Governance" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-ip)"></div>
           <span class="collection-name">Intellectual Property</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Intellectual Property" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Intellectual Property" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-directors)"></div>
           <span class="collection-name">Director Duties</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Director Duties" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Director Duties" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-disputes)"></div>
           <span class="collection-name">Disputes</span>
-          <span class="collection-count">{% assign count = site.articles | where: "category", "Disputes" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Disputes" | size %}{% if count > 0 %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}{% else %}Coming soon{% endif %}</span>
         </div>
+
       </div>
     </div>
 
