@@ -1,3 +1,6 @@
+---
+layout: null
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,8 +21,6 @@
       --parchment: #F2EDE4;
       --slate:     #8A8A80;
       --signal:    #C8B89A;
-
-      /* category colours — heavily desaturated */
       --cat-contracts:   #C8B89A;
       --cat-employment:  #8A9A7A;
       --cat-privacy:     #7A8A9A;
@@ -47,7 +48,6 @@
     main { flex: 1; }
     a { color: inherit; text-decoration: none; }
 
-    /* ── NAV ── */
     nav {
       display: flex;
       justify-content: space-between;
@@ -67,11 +67,7 @@
       color: var(--parchment);
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 
     .nav-links a {
       font-size: 0.75rem;
@@ -83,7 +79,6 @@
 
     .nav-links a:hover { color: var(--parchment); }
 
-    /* ── HERO ── */
     .hero {
       max-width: 1200px;
       margin: 0 auto;
@@ -123,10 +118,9 @@
       max-width: 520px;
     }
 
-    /* ── SEARCH ── */
     .search-wrap {
       position: relative;
-      max-width: 100%;
+      max-width: 680px;
     }
 
     .search-input {
@@ -159,7 +153,6 @@
       pointer-events: none;
     }
 
-    /* ── DIVIDER ── */
     .section-divider {
       max-width: 1200px;
       margin: 0 auto;
@@ -174,7 +167,6 @@
       margin: 0;
     }
 
-    /* ── SECTION WRAPPER ── */
     .section {
       max-width: 1200px;
       margin: 0 auto;
@@ -205,7 +197,6 @@
       opacity: 0.5;
     }
 
-    /* ── COLLECTIONS ── */
     .collections-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -249,7 +240,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ── BUSINESS DECISIONS ── */
     .decisions-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -269,10 +259,7 @@
       cursor: pointer;
     }
 
-    .decision-item:hover {
-      background: var(--panel);
-      color: var(--parchment);
-    }
+    .decision-item:hover { background: var(--panel); color: var(--parchment); }
 
     .decision-prefix {
       display: block;
@@ -284,12 +271,7 @@
       margin-bottom: 0.3rem;
     }
 
-    /* ── ARTICLE CARDS ── */
-    .articles-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
+    .articles-list { display: flex; flex-direction: column; gap: 0; }
 
     .article-card {
       display: grid;
@@ -318,15 +300,14 @@
     .article-card:hover::before { opacity: 1; }
     .article-card:hover { background: rgba(242,237,228,0.015); }
 
-    /* category rule colours */
-    .cat-contracts::before  { background: var(--cat-contracts); }
-    .cat-employment::before { background: var(--cat-employment); }
-    .cat-privacy::before    { background: var(--cat-privacy); }
-    .cat-ai::before         { background: var(--cat-ai); }
-    .cat-governance::before { background: var(--cat-governance); }
-    .cat-ip::before         { background: var(--cat-ip); }
-    .cat-disputes::before   { background: var(--cat-disputes); }
-    .cat-directors::before  { background: var(--cat-directors); }
+    .article-card[data-cat="Commercial Contracts"]::before  { background: var(--cat-contracts); }
+    .article-card[data-cat="Employment"]::before            { background: var(--cat-employment); }
+    .article-card[data-cat="Privacy"]::before               { background: var(--cat-privacy); }
+    .article-card[data-cat="Artificial Intelligence"]::before { background: var(--cat-ai); }
+    .article-card[data-cat="Governance"]::before            { background: var(--cat-governance); }
+    .article-card[data-cat="Intellectual Property"]::before { background: var(--cat-ip); }
+    .article-card[data-cat="Disputes"]::before              { background: var(--cat-disputes); }
+    .article-card[data-cat="Director Duties"]::before       { background: var(--cat-directors); }
 
     .article-main { display: flex; flex-direction: column; gap: 0.5rem; }
 
@@ -335,16 +316,16 @@
       letter-spacing: 0.18em;
       text-transform: uppercase;
       opacity: 0.6;
+      color: var(--signal);
     }
 
-    .cat-contracts  .article-category { color: var(--cat-contracts); }
-    .cat-employment .article-category { color: var(--cat-employment); }
-    .cat-privacy    .article-category { color: var(--cat-privacy); }
-    .cat-ai         .article-category { color: var(--cat-ai); }
-    .cat-governance .article-category { color: var(--cat-governance); }
-    .cat-ip         .article-category { color: var(--cat-ip); }
-    .cat-disputes   .article-category { color: var(--cat-disputes); }
-    .cat-directors  .article-category { color: var(--cat-directors); }
+    .article-card[data-cat="Employment"] .article-category    { color: var(--cat-employment); }
+    .article-card[data-cat="Privacy"] .article-category       { color: var(--cat-privacy); }
+    .article-card[data-cat="Artificial Intelligence"] .article-category { color: var(--cat-ai); }
+    .article-card[data-cat="Governance"] .article-category    { color: var(--cat-governance); }
+    .article-card[data-cat="Intellectual Property"] .article-category { color: var(--cat-ip); }
+    .article-card[data-cat="Disputes"] .article-category      { color: var(--cat-disputes); }
+    .article-card[data-cat="Director Duties"] .article-category { color: var(--cat-directors); }
 
     .article-title {
       font-family: 'Cormorant Garamond', serif;
@@ -406,7 +387,6 @@
       white-space: nowrap;
     }
 
-    /* ── FOOTER ── */
     footer {
       max-width: 1200px;
       margin: 0 auto;
@@ -436,7 +416,6 @@
       flex-shrink: 0;
     }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .collections-grid  { grid-template-columns: repeat(2, 1fr); }
       .decisions-grid    { grid-template-columns: repeat(2, 1fr); }
@@ -459,21 +438,20 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a class="logo" href="/">On Retainer</a>
     <ul class="nav-links">
-      <li><a href="/articles">Intelligence</a></li>
+      <li><a href="/Intelligence">Intelligence</a></li>
       <li><a href="https://linkedin.com/in/YOURHANDLE" target="_blank" rel="noopener">LinkedIn</a></li>
     </ul>
   </nav>
 
   <main>
 
-    <!-- HERO + SEARCH -->
     <div class="hero">
+      <span class="hero-eyebrow">On Retainer</span>
       <h1>Legal Intelligence</h1>
-      <p class="hero-sub">Educational legal content for Australian businesses. Search by topic, business concept or area of law.</p>
+      <p class="hero-sub">Practical legal guidance for Australian businesses. Search by topic, business decision or legal issue.</p>
       <div class="search-wrap">
         <input class="search-input" type="text" placeholder="Search contracts, employment, privacy..." id="searchInput" />
         <span class="search-icon">⌕</span>
@@ -492,42 +470,42 @@
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-contracts)"></div>
           <span class="collection-name">Commercial Contracts</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Commercial Contracts" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-employment)"></div>
           <span class="collection-name">Employment</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Employment" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-privacy)"></div>
           <span class="collection-name">Privacy</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Privacy" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-ai)"></div>
           <span class="collection-name">Artificial Intelligence</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Artificial Intelligence" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-governance)"></div>
           <span class="collection-name">Governance</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Governance" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-ip)"></div>
           <span class="collection-name">Intellectual Property</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Intellectual Property" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-directors)"></div>
           <span class="collection-name">Director Duties</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Director Duties" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
         <div class="collection-item">
           <div class="collection-rule" style="background:var(--cat-disputes)"></div>
           <span class="collection-name">Disputes</span>
-          <span class="collection-count">Coming soon</span>
+          <span class="collection-count">{% assign count = site.articles | where: "category", "Disputes" | size %}{{ count }} {% if count == 1 %}article{% else %}articles{% endif %}</span>
         </div>
       </div>
     </div>
@@ -537,84 +515,51 @@
     <!-- BROWSE BY BUSINESS DECISION -->
     <div class="section">
       <div class="section-header">
-        <h2 class="section-title">Browse by Business Concept</h2>
-        <span class="section-meta">Find Educational Content For Common Business Scenarios</span>
+        <h2 class="section-title">Browse by Business Decision</h2>
+        <span class="section-meta">Find guidance for your situation</span>
       </div>
       <div class="decisions-grid">
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Hiring Employees
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Signing a Contract
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Terminating a Contract
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Raising Investment
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Protecting IP
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Using AI in My Business
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Buying a Business
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Resolving a Dispute
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Managing Employees
-        </div>
-        <div class="decision-item">
-          <span class="decision-prefix">I am</span>
-          Reviewing Director Responsibilities
-        </div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Hiring Employees</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Signing a Contract</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Terminating a Contract</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Raising Investment</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Protecting IP</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Using AI in My Business</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Buying a Business</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Resolving a Dispute</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Managing Employees</div>
+        <div class="decision-item"><span class="decision-prefix">I am</span>Reviewing Director Responsibilities</div>
       </div>
     </div>
 
     <div class="section-divider"><div class="signal-rule"></div></div>
 
-    <!-- RECENTLY UPDATED + BROWSE ALL -->
+    <!-- ARTICLES — AUTO-GENERATED FROM _articles COLLECTION -->
     <div class="section">
       <div class="section-header">
         <h2 class="section-title">Recently Updated</h2>
-        <span class="section-meta">All Intelligence</span>
+        <span class="section-meta">{{ site.articles | size }} {% if site.articles.size == 1 %}article{% else %}articles{% endif %}</span>
       </div>
 
       <div class="articles-list" id="articleList">
-
-        <!-- ── ADD NEW ARTICLES HERE — most recent at top ── -->
-
-        <a href="/Intelligence/understanding-saas-liability.html" class="article-card cat-contracts">
+        {% assign sorted_articles = site.articles | sort: "date" | reverse %}
+        {% for article in sorted_articles %}
+        <a href="{{ article.url }}" class="article-card" data-cat="{{ article.category }}">
           <div class="article-main">
-            <span class="article-category">Commercial Contracts</span>
-            <span class="article-title">Understanding liability clauses in SaaS agreements</span>
-            <span class="article-summary">Uncapped liability clauses are common in commercial contracts. This article explains what they are and how they typically appear in agreements.</span>
+            <span class="article-category">{{ article.category }}</span>
+            <span class="article-title">{{ article.title }}</span>
+            <span class="article-summary">{{ article.summary | truncate: 160 }}</span>
             <div class="article-meta-row">
-              <span class="article-meta-item">5 min read</span>
+              <span class="article-meta-item">{{ article.read_time }}</span>
               <span class="article-meta-sep"></span>
-              <span class="article-meta-item">Last reviewed —</span>
+              <span class="article-meta-item">{{ article.date | date: "%-d %B %Y" }}</span>
             </div>
           </div>
           <div class="article-aside">
-            <span class="risk-badge">High Risk</span>
+            <span class="risk-badge">{{ article.risk }}</span>
           </div>
         </a>
-
-        <!-- END ARTICLES -->
-
+        {% endfor %}
       </div>
     </div>
 
@@ -626,7 +571,6 @@
   </footer>
 
   <script>
-    // Simple client-side search
     const input = document.getElementById('searchInput');
     const cards = document.querySelectorAll('.article-card');
 
