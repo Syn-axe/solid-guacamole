@@ -1035,6 +1035,9 @@ layout: null
       <div class="articles-list" id="articleList">
         {% assign sorted_articles = site.articles | sort: "date" | reverse %}
         {% for article in sorted_articles %}
+        {% assign article_words = article.content | strip_html | number_of_words %}
+        {% assign article_minutes = article_words | divided_by: 200.0 | ceil %}
+        {% if article_minutes < 1 %}{% assign article_minutes = 1 %}{% endif %}
         <a href="{{ article.url }}" class="article-card" data-cat="{{ article.category }}">
           <div class="article-main">
             <span class="article-category">{{ article.category }}</span>
@@ -1043,7 +1046,7 @@ layout: null
             <div class="article-meta-row">
               <span class="article-meta-item">Updated {{ article.date | date: "%-d %B %Y" }}</span>
               <span class="article-meta-sep"></span>
-              <span class="article-meta-item">{{ article.read_time }}</span>
+              <span class="article-meta-item">{{ article_minutes }} min read</span>
             </div>
           </div>
           <div class="article-aside">
