@@ -299,9 +299,16 @@
     .footer-mark:hover { color: var(--signal); opacity: 1; }
 
     @media (max-width: 700px) {
-      nav { padding: 1.5rem 1.8rem; }
+      nav { padding: 0.75rem 1.8rem; }
+      .logo { min-height: 2.75rem; display: flex; align-items: center; }
       .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      .nav-links a {
+        min-height: 2.75rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.6rem;
+        letter-spacing: 0.08em;
+      }
       .page-header, .section, .section-divider, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
       .status-tag { display: none; }
       .article-card { grid-template-columns: 1fr; }
