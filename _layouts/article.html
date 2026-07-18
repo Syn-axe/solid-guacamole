@@ -18,6 +18,8 @@
       --parchment: #F2EDE4;
       --slate:     #9E9E93;
       --signal:    #C8B89A;
+      --gold:      #C9A84C;
+      --border-faint: rgba(255,255,255,0.08);
       --cat-color: {{ page.cat_color | default: "#C8B89A" }};
     }
 
@@ -106,46 +108,39 @@
 
     .back-link:hover { opacity: 1; }
 
-    .article-meta-top {
-      display: flex;
-      align-items: center;
+    .article-meta-strip {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 1.5rem;
-      margin-bottom: 1.8rem;
-      flex-wrap: wrap;
+      padding: 1rem 0 1.15rem;
+      border-top: 1px solid var(--border-faint);
+      border-bottom: 1px solid var(--border-faint);
     }
 
-    .article-category {
-      font-size: 0.68rem;
+    .meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      min-width: 0;
+    }
+
+    .meta-label {
+      font-size: 0.55rem;
+      font-weight: 500;
       letter-spacing: 0.18em;
+      line-height: 1.2;
       text-transform: uppercase;
-      color: var(--cat-color);
-      opacity: 0.8;
-    }
-
-    .article-meta-sep {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--slate);
-      opacity: 0.3;
-    }
-
-    .article-meta-item {
-      font-size: 0.68rem;
       color: var(--slate);
-      opacity: 0.8;
-      letter-spacing: 0.05em;
     }
 
-    .risk-badge {
-      font-size: 0.65rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.7rem;
-      border: 1px solid var(--border);
-      color: var(--slate);
-      opacity: 0.85;
+    .meta-value {
+      font-size: 0.7rem;
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--parchment);
     }
+
+    .meta-value--accent { color: #E1D43A; }
 
     .cat-rule {
       width: 3rem;
@@ -171,8 +166,6 @@
       max-width: 600px;
       margin-bottom: 1.5rem;
     }
-
-    .signal-rule { width: 100%; height: 1px; background: var(--border); }
 
     /* ARTICLE BODY — styles target rendered markdown output */
     .article-body { max-width: 800px; margin: 0 auto; padding: 1.5rem 4rem 5rem; }
@@ -220,6 +213,22 @@
 
     .article-body strong { font-weight: 500; color: var(--parchment); opacity: 1; }
 
+    /* Native Jekyll/Kramdown footnote references. */
+    .article-body sup {
+      font-size: 0.65em;
+      line-height: 0;
+      vertical-align: super;
+    }
+
+    .article-body sup a {
+      color: var(--gold);
+      border-bottom: 0;
+      opacity: 0.72;
+      text-decoration: none;
+    }
+
+    .article-body sup a:hover { opacity: 1; }
+
     /* QUICK ANSWER */
     .article-body .quick-answer {
       background: rgba(201,168,76,0.04);
@@ -263,6 +272,78 @@
       line-height: 1.85;
       margin-bottom: 0.5rem;
     }
+
+    /* Further Reading: styles Jekyll's generated footnote output. */
+    .article-body #further-reading {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      line-height: 1.2;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin: 5rem 0 0.85rem;
+    }
+
+    .article-body .footnotes {
+      margin: 0;
+      padding: 0;
+    }
+
+    .article-body .footnotes::before { display: none; }
+
+    .article-body .footnotes ol {
+      list-style: none;
+      counter-reset: further-reading;
+      margin: 0;
+      padding: 0;
+    }
+
+    .article-body .footnotes li {
+      counter-increment: further-reading;
+      display: grid;
+      grid-template-columns: 1rem minmax(0, 1fr);
+      gap: 0.75rem;
+      margin: 0;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border-faint);
+      opacity: 1;
+    }
+
+    .article-body .footnotes li::before {
+      content: counter(further-reading);
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.58rem;
+      line-height: 1.7;
+      color: var(--gold);
+    }
+
+    .article-body .footnotes li:last-child { border-bottom: 0; }
+
+    .article-body .footnotes p {
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.72rem;
+      line-height: 1.65;
+      color: var(--slate);
+      margin: 0;
+      opacity: 1;
+    }
+
+    .article-body .footnotes a {
+      color: var(--parchment);
+      border-bottom: 0;
+      font-style: italic;
+      text-decoration: underline;
+      text-decoration-color: rgba(242,237,228,0.32);
+      text-underline-offset: 0.15em;
+    }
+
+    .article-body .footnotes a:hover {
+      color: var(--signal);
+      text-decoration-color: var(--signal);
+    }
+
+    .article-body .footnotes .reversefootnote { display: none; }
 
     .article-body blockquote {
       border-left: 2px solid var(--cat-color);
@@ -359,6 +440,7 @@
       .status-tag { display: none; }
       .article-header, .article-body { padding-left: 1.8rem; padding-right: 1.8rem; }
       .article-header { padding-top: 3rem; }
+      .article-meta-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer-brand { align-items: flex-start; }
     }
@@ -409,17 +491,24 @@
       <h1>{{ page.title }}</h1>
       <p class="article-standfirst">{{ page.summary }}</p>
 
-      <div class="article-meta-top">
-        <span class="article-category">{{ page.category }}</span>
-        <span class="article-meta-sep"></span>
-        <span class="article-meta-item">{{ page.read_time }}</span>
-        <span class="article-meta-sep"></span>
-        <span class="article-meta-item">{{ page.date | date: "%-d %B %Y" }}</span>
-        <span class="article-meta-sep"></span>
-        <span class="risk-badge">{{ page.risk }}</span>
+      <div class="article-meta-strip" aria-label="Article details">
+        <div class="meta-item">
+          <span class="meta-label">Category</span>
+          <span class="meta-value meta-value--accent">{{ page.category }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Risk Level</span>
+          <span class="meta-value meta-value--accent">{{ page.risk }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Read Time</span>
+          <span class="meta-value">{{ page.read_time }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Published</span>
+          <span class="meta-value">{{ page.date | date: "%-d %B %Y" }}</span>
+        </div>
       </div>
-
-      <div class="signal-rule"></div>
     </div>
 
     <div class="article-body">
