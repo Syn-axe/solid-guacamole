@@ -36,7 +36,7 @@ The distinction is not determined simply by the label used in an agreement. Cour
 
 ## How do Australian courts determine whether someone is an employee or contractor?
 
-Australian Courts focus on the substance of the relationship rather than the label applied by the parties. The High Court of Australia has explained that an employee works as part of another party's business, whereas an independent contractor performs work as a principal in their own right.[^1]
+Australian Courts focus on the substance of the relationship rather than the label applied by the parties. The High Court of Australia has explained that an employee works as part of another party's business, whereas an independent contractor performs work as a principal in their own right. [^1]
 
 As the High Court observed in *CFMMEU v Personnel Contracting Pty Ltd* [2022] HCA 1:
 
