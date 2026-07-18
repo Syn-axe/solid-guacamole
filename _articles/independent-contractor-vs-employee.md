@@ -76,15 +76,18 @@ A contractor agreement does not create a contractor relationship by itself. The 
 
 For advice specific to your circumstances, consult a qualified Australian legal practitioner.
 
-<div class="further-reading">
-  <p class="further-reading-label">Further Reading</p>
-  <ol class="footnotes">
-    <li><span class="fn-num">1</span><span><a href="https://jade.io/article/904712" target="_blank" rel="noopener"><em>CFMMEU v Personnel Contracting Pty Ltd</em> [2022] HCA 1</a>, [38]–[39] (Gordon J); [59]–[61] (Kiefel CJ, Keane and Edelman JJ).</span></li>
-    <li><span class="fn-num">2</span><span><a href="https://jade.io/article/904712" target="_blank" rel="noopener"><em>CFMMEU v Personnel Contracting Pty Ltd</em> [2022] HCA 1</a>, [38].</span></li>
-    <li><span class="fn-num">3</span><span><a href="https://jade.io/article/68278" target="_blank" rel="noopener"><em>Hollis v Vabu Pty Ltd</em> (2001) 207 CLR 21</a>, [39].</span></li>
-    <li><span class="fn-num">4</span><span><a href="https://jade.io/article/904712" target="_blank" rel="noopener"><em>CFMMEU v Personnel Contracting Pty Ltd</em> [2022] HCA 1</a>, [55]–[61].</span></li>
-    <li><span class="fn-num">5</span><span><a href="https://jade.io/article/904712" target="_blank" rel="noopener"><em>CFMMEU v Personnel Contracting Pty Ltd</em> [2022] HCA 1</a>, [59]–[61].</span></li>
-    <li><span class="fn-num">6</span><span><a href="https://jade.io/article/67255" target="_blank" rel="noopener"><em>Stevens v Brodribb Sawmilling Co Pty Ltd</em> (1986) 160 CLR 16</a>.</span></li>
-    <li><span class="fn-num">7</span><span><a href="https://www.legislation.gov.au/C2009A00028/latest/text" target="_blank" rel="noopener"><em>Fair Work Act 2009</em> (Cth)</a>; <a href="https://www.legislation.gov.au/C2004A04402/latest/text" target="_blank" rel="noopener"><em>Superannuation Guarantee (Administration) Act 1992</em> (Cth)</a>; <a href="https://www.fairwork.gov.au/find-help-for/independent-contractors" target="_blank" rel="noopener">Fair Work Ombudsman, <em>Independent contractors and employees</em></a>.</span></li>
-  </ol>
-</div>
+### Further reading
+
+[^1]: [*CFMMEU v Personnel Contracting Pty Ltd* [2022] HCA 1](https://jade.io/article/904712), [38]–[39] (Gordon J); [59]–[61] (Kiefel CJ, Keane and Edelman JJ).
+
+[^2]: [*CFMMEU v Personnel Contracting Pty Ltd* [2022] HCA 1](https://jade.io/article/904712), [38].
+
+[^3]: [*Hollis v Vabu Pty Ltd* (2001) 207 CLR 21](https://jade.io/article/68278), [39].
+
+[^4]: [*CFMMEU v Personnel Contracting Pty Ltd* [2022] HCA 1](https://jade.io/article/904712), [55]–[61].
+
+[^5]: [*CFMMEU v Personnel Contracting Pty Ltd* [2022] HCA 1](https://jade.io/article/904712), [59]–[61].
+
+[^6]: [*Stevens v Brodribb Sawmilling Co Pty Ltd* (1986) 160 CLR 16](https://jade.io/article/67255).
+
+[^7]: [*Fair Work Act 2009* (Cth)](https://www.legislation.gov.au/C2009A00028/latest/text); [*Superannuation Guarantee (Administration) Act 1992* (Cth)](https://www.legislation.gov.au/C2004A04402/latest/text); [Fair Work Ombudsman, *Independent contractors and employees*](https://www.fairwork.gov.au/find-help-for/independent-contractors).
