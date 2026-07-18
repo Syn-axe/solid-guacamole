@@ -92,12 +92,12 @@ Understanding how these clauses are structured and what legal framework applies 
 
 For advice specific to your circumstances, consult a qualified Australian legal practitioner.
 
-<div class="further-reading">
-  <p class="further-reading-label">Further Reading</p>
-  <ol class="footnotes">
-    <li><span class="fn-num">1</span><span><a href="https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html" target="_blank" rel="noopener"><em>Darlington Futures Ltd v Delco Australia Pty Ltd</em> (1986) 161 CLR 500</a>.</span></li>
-    <li><span class="fn-num">2</span><span><a href="https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html" target="_blank" rel="noopener"><em>Darlington Futures Ltd v Delco Australia Pty Ltd</em> (1986) 161 CLR 500</a>, 510–11 [16].</span></li>
-    <li><span class="fn-num">3</span><span><a href="https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html" target="_blank" rel="noopener"><em>Darlington Futures Ltd v Delco Australia Pty Ltd</em> (1986) 161 CLR 500</a>, 510–11 [16].</span></li>
-    <li><span class="fn-num">4</span><span><a href="https://www.hcourt.gov.au/sites/default/files/eresources/2004/HCA/52.pdf" target="_blank" rel="noopener"><em>Toll (FGCT) Pty Ltd v Alphapharm Pty Ltd</em> (2004) 219 CLR 165</a>, [40].</span></li>
-  </ol>
-</div>
+### Further reading
+
+[^1]: [*Darlington Futures Ltd v Delco Australia Pty Ltd* (1986) 161 CLR 500](https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html).
+
+[^2]: [*Darlington Futures Ltd v Delco Australia Pty Ltd* (1986) 161 CLR 500](https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html), 510–11 [16].
+
+[^3]: [*Darlington Futures Ltd v Delco Australia Pty Ltd* (1986) 161 CLR 500](https://www.austlii.edu.au/cgi-bin/viewdoc/au/cases/cth/HCA/1986/82.html), 510–11 [16].
+
+[^4]: [*Toll (FGCT) Pty Ltd v Alphapharm Pty Ltd* (2004) 219 CLR 165](https://www.hcourt.gov.au/sites/default/files/eresources/2004/HCA/52.pdf), [40].
