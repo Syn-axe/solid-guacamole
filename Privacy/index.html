@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — On Retainer</title>
+  <meta name="description" content="Privacy Policy for the On Retainer website, explaining how we collect, use and protect your personal information." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:      #0A0A0A;
+      --parchment: #F2EDE4;
+      --slate:     #9E9E93;
+      --seam:      #1E1E1C;
+      --signal:    #C8B89A;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--void);
+      color: var(--parchment);
+      font-family: 'Archivo', sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(200,184,154,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 85% 20%, rgba(200,184,154,0.04) 0%, transparent 60%);
+      animation: ambientDrift 25s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes ambientDrift {
+      0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+      33%  { transform: translate(3%, 2%) scale(1.03); opacity: 0.85; }
+      66%  { transform: translate(-2%, 3%) scale(0.98); opacity: 1; }
+      100% { transform: translate(1%, -2%) scale(1.02); opacity: 0.9; }
+    }
+
+    main { flex: 1; position: relative; z-index: 10; }
+    a { color: inherit; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      background: linear-gradient(to bottom, var(--void) 60%, transparent);
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .logo {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+    }
+
+    .status-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border: 1px solid var(--seam);
+      padding: 0.25rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--parchment); }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 4rem 1.5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 1.6rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.4rem;
+    }
+
+    .standfirst {
+      font-size: 1.05rem;
+      color: var(--slate);
+      line-height: 1.8;
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    .signal-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--seam);
+    }
+
+    /* BODY */
+    .page-body { max-width: 900px; margin: 0 auto; padding: 2rem 4rem 3rem; }
+
+    .page-body p {
+      font-size: 1rem;
+      color: var(--parchment);
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+      opacity: 0.88;
+    }
+
+    .page-body h2 {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: var(--parchment);
+      margin: 3rem 0 1.2rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .page-body strong { font-weight: 500; color: var(--parchment); opacity: 1; }
+
+    .page-body ul {
+      margin: 0 0 1.6rem 1.4rem;
+      padding: 0;
+    }
+
+    .page-body ul li {
+      font-size: 1rem;
+      color: var(--parchment);
+      line-height: 1.9;
+      opacity: 0.88;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Definition sub-sections */
+    .provision {
+      margin-bottom: 2rem;
+    }
+
+    .provision-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.8rem 4rem 2.2rem;
+      border-top: 1px solid var(--seam);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .footer-abn {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-links a:hover { color: var(--signal); opacity: 1; }
+
+    .footer-divider {
+      font-size: 0.65rem;
+      color: var(--slate);
+      opacity: 0.4;
+    }
+
+    .disclaimer {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.8;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .disclaimer a { color: var(--slate); text-decoration: underline; text-underline-offset: 2px; }
+    .disclaimer a:hover { color: var(--parchment); }
+
+    .footer-mark {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-mark:hover { color: var(--signal); opacity: 1; }
+
+    @media (max-width: 700px) {
+      nav { padding: 1.5rem 1.8rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .status-tag { display: none; }
+      .page-header, .page-body { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .page-header { padding-top: 3rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-brand { align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-group">
+      <a class="logo" href="/">On Retainer</a>
+      <span class="status-tag">Pre-launch</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/Intelligence">Intelligence</a></li>
+      <li><a href="https://www.linkedin.com/in/jack-farrell97" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <span class="eyebrow">Legal</span>
+      <h1>Privacy Policy</h1>
+      <p class="standfirst">Last updated: July 2026</p>
+      <div class="signal-rule"></div>
+    </div>
+
+    <div class="page-body">
+
+      <p>On Retainer ABN 95 932 683 020 (<strong>On Retainer, we, us, our</strong>) is committed to protecting the privacy of Personal Information we collect through this Website.</p>
+
+      <p>This Website does not use cookies, analytics tools or any third-party tracking technologies.</p>
+
+      <h2>Definitions</h2>
+
+      <div class="provision">
+        <span class="provision-title">Personal Information</span>
+        <p style="margin-bottom: 0;">has the meaning given in the <em>Privacy Act 1988</em> (Cth).</p>
+      </div>
+
+      <div class="provision">
+        <span class="provision-title">Sensitive Information</span>
+        <p style="margin-bottom: 0;">has the meaning given in the <em>Privacy Act 1988</em> (Cth).</p>
+      </div>
+
+      <div class="provision">
+        <span class="provision-title">Third-Party Provider</span>
+        <p style="margin-bottom: 0;">means any third-party service provider engaged by us to support our operations, including but not limited to technology providers, hosting providers and communication platforms.</p>
+      </div>
+
+      <div class="provision">
+        <span class="provision-title">Overseas Recipient</span>
+        <p style="margin-bottom: 0;">means any person, entity or service provider located outside Australia to whom Personal Information is disclosed or transferred in connection with our operations.</p>
+      </div>
+
+      <h2>What We Collect and How</h2>
+
+      <p>The only Personal Information we collect is your email address. We collect it in two ways:</p>
+
+      <ul>
+        <li>when you subscribe to our email updates through the sign-up form on this Website; and</li>
+        <li>when you contact us through the contact form or by emailing us directly at <a href="mailto:hello@onretainer.com.au" style="text-decoration: underline; text-underline-offset: 2px;">hello@onretainer.com.au</a>.</li>
+      </ul>
+
+      <p>We do not collect your name, phone number or any other Personal Information through this Website. We do not collect Sensitive Information.</p>
+
+      <h2>Why We Collect It</h2>
+
+      <p>We collect your email address to:</p>
+
+      <ul>
+        <li>send you updates about On Retainer;</li>
+        <li>send you newsletters and content from our Intelligence hub; and</li>
+        <li>respond to enquiries you send us directly.</li>
+      </ul>
+
+      <p>We will not use your email address for any other purpose without your consent.</p>
+
+      <h2>Disclosure to Third Parties</h2>
+
+      <p>We do not sell, rent or share your Personal Information with third parties for marketing or any other commercial purpose.</p>
+
+      <p>Our email sign-up and contact forms are operated using Google Forms and email correspondence is handled through Google Workspace. As a result, your email address is processed and stored on Google's servers, which may be located outside Australia. By submitting your information through this Website, you consent to your Personal Information being disclosed to Google as an Overseas Recipient for the purposes described in this policy. Google acts as a data processor on our behalf and its handling of your information is governed by <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">Google's Privacy Policy</a>. We do not otherwise disclose your Personal Information to Overseas Recipients.</p>
+
+      <h2>How Long We Retain Your Information</h2>
+
+      <p>We retain your email address for as long as you remain subscribed to our email updates or maintain an active correspondence with us. If you unsubscribe or request deletion of your information, we will remove your email address from our records within 30 days.</p>
+
+      <h2>Security</h2>
+
+      <p>We take reasonable steps to protect the Personal Information we hold from misuse, loss and unauthorised access. Your information is stored within Google's infrastructure, which maintains industry-standard security controls. We do not store Personal Information on our own servers.</p>
+
+      <h2>Access, Correction and Deletion</h2>
+
+      <p>You may request access to, correction of, or deletion of the Personal Information we hold about you at any time by contacting us at <a href="mailto:hello@onretainer.com.au" style="text-decoration: underline; text-underline-offset: 2px;">hello@onretainer.com.au</a>. We will respond to your request within 30 days.</p>
+
+      <h2>Direct Marketing Opt-Out</h2>
+
+      <p>You may unsubscribe from our email updates at any time via our <a href="/Unsubscribe" style="text-decoration: underline; text-underline-offset: 2px;">Unsubscribe page</a> or by contacting us directly. We will process your request promptly.</p>
+
+      <h2>Complaints</h2>
+
+      <p>If you have a complaint about how we have handled your Personal Information, please contact us at <a href="mailto:hello@onretainer.com.au" style="text-decoration: underline; text-underline-offset: 2px;">hello@onretainer.com.au</a>. We will investigate your complaint and respond within 30 days.</p>
+
+      <p>If you are not satisfied with our response, you may refer your complaint to the Office of the Australian Information Commissioner (OAIC) at <a href="https://www.oaic.gov.au" target="_blank" rel="noopener" style="text-decoration: underline; text-underline-offset: 2px;">oaic.gov.au</a>.</p>
+
+      <h2>Changes to This Policy</h2>
+
+      <p>We may update this Privacy Policy from time to time. Any changes will be published on this page with an updated date. Your continued use of this Website after changes are published constitutes acceptance of the updated policy.</p>
+
+      <h2>Contact Us</h2>
+
+      <p>For any questions about this Privacy Policy or how we handle your Personal Information, please contact us at <a href="mailto:hello@onretainer.com.au" style="text-decoration: underline; text-underline-offset: 2px;">hello@onretainer.com.au</a>.</p>
+
+    </div>
+  </main>
+
+  <footer>
+    <p class="disclaimer">General information published on this site and associated channels is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. On Retainer is a pre-launch resource; commercial legal services are not currently offered. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+    <div class="footer-brand">
+      <a class="footer-mark" href="mailto:hello@onretainer.com.au">hello@onretainer.com.au</a>
+      <span class="footer-abn">© 2026 On Retainer ABN 95 932 683 020</span>
+      <div class="footer-links">
+        <a href="/Privacy">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="/Terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

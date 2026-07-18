@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ page.title }} — On Retainer Intelligence</title>
+  <meta name="description" content="{{ page.title }} articles for Australian founders and SMEs, from On Retainer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:      #0A0A0A;
+      --panel:     #111111;
+      --border:    #1E1E1C;
+      --parchment: #F2EDE4;
+      --slate:     #9E9E93;
+      --signal:    #C8B89A;
+      --cat-color: {{ page.cat_color | default: "#C8B89A" }};
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--void);
+      color: var(--parchment);
+      font-family: 'Archivo', sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main { flex: 1; }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      background: linear-gradient(to bottom, var(--void) 60%, transparent);
+    }
+
+    .logo {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+    }
+
+    .logo-group { display: flex; align-items: center; gap: 0.9rem; }
+
+    .status-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--parchment); }
+
+    .page-header {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 4rem 4rem 2.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      opacity: 0.6;
+      margin-bottom: 2.5rem;
+      transition: opacity 0.2s;
+    }
+
+    .back-link:hover { opacity: 1; }
+
+    .cat-rule {
+      width: 3rem;
+      height: 2px;
+      background: var(--cat-color);
+      margin-bottom: 1.5rem;
+    }
+
+    .page-header .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--cat-color);
+      opacity: 0.8;
+      display: block;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      line-height: 1.1;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+      margin-bottom: 1rem;
+    }
+
+    .page-sub {
+      font-size: 0.95rem;
+      color: var(--slate);
+      max-width: 560px;
+    }
+
+    .section-divider { max-width: 1200px; margin: 0 auto; width: 100%; padding: 0 4rem; }
+    .signal-rule { width: 100%; height: 1px; background: var(--border); }
+
+    .section { max-width: 1200px; margin: 0 auto; width: 100%; padding: 3rem 4rem 4rem; }
+
+    .articles-list { display: flex; flex-direction: column; gap: 0; }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .article-card:last-child { border-bottom: 1px solid var(--border); }
+
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--cat-color);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .article-card:hover::before { opacity: 1; }
+    .article-card:hover { background: rgba(242,237,228,0.015); }
+
+    .article-main { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .article-category {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      color: var(--cat-color);
+    }
+
+    .article-title {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      color: var(--parchment);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .article-card:hover .article-title { opacity: 0.85; }
+
+    .article-summary {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .article-meta-row { display: flex; align-items: center; gap: 1.5rem; margin-top: 0.4rem; }
+
+    .article-meta-item {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.8;
+      letter-spacing: 0.05em;
+    }
+
+    .article-meta-sep {
+      width: 3px; height: 3px; border-radius: 50%;
+      background: var(--slate); opacity: 0.3;
+    }
+
+    .article-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      min-width: 120px;
+    }
+
+    .risk-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--border);
+      color: var(--slate);
+      opacity: 0.85;
+      white-space: nowrap;
+    }
+
+    .empty-state {
+      font-size: 0.9rem;
+      color: var(--slate);
+      opacity: 0.8;
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.8rem 4rem 2.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .footer-abn {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+    
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-links a:hover { color: var(--signal); opacity: 1; }
+
+    .footer-divider {
+      font-size: 0.65rem;
+      color: var(--slate);
+      opacity: 0.4;
+    }
+
+    .disclaimer { font-size: 0.68rem; color: var(--slate); opacity: 0.8; line-height: 1.65; max-width: 680px; }
+    .disclaimer a { color: var(--slate); text-decoration: underline; text-underline-offset: 2px; }
+    .disclaimer a:hover { color: var(--parchment); }
+    .footer-mark { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--slate); opacity: 0.8; white-space: nowrap; flex-shrink: 0; text-decoration: none; transition: color 0.25s, opacity 0.25s; }
+    .footer-mark:hover { color: var(--signal); opacity: 1; }
+
+    @media (max-width: 700px) {
+      nav { padding: 1.5rem 1.8rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      .page-header, .section, .section-divider, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .status-tag { display: none; }
+      .article-card { grid-template-columns: 1fr; }
+      .article-aside { flex-direction: row; align-items: center; margin-top: 0.8rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-brand { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-group">
+      <a class="logo" href="/">On Retainer</a>
+      <span class="status-tag">Pre-launch</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/Intelligence">Intelligence</a></li>
+      <li><a href="https://www.linkedin.com/in/jack-farrell97" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <a class="back-link" href="/Intelligence">← All Intelligence</a>
+      <div class="cat-rule"></div>
+      <span class="eyebrow">Category</span>
+      <h1>{{ page.title }}</h1>
+      <p class="page-sub">{{ page.description }}</p>
+    </div>
+
+    <div class="section-divider"><div class="signal-rule"></div></div>
+
+    <div class="section">
+      {% assign cat_articles = site.articles | where: "category", page.category | sort: "date" | reverse %}
+
+      {% if cat_articles.size > 0 %}
+      <div class="articles-list">
+        {% for article in cat_articles %}
+        <a href="{{ article.url }}" class="article-card">
+          <div class="article-main">
+            <span class="article-category">{{ article.category }}</span>
+            <span class="article-title">{{ article.title }}</span>
+            <span class="article-summary">{{ article.summary | truncate: 160 }}</span>
+            <div class="article-meta-row">
+              <span class="article-meta-item">{{ article.read_time }}</span>
+              <span class="article-meta-sep"></span>
+              <span class="article-meta-item">{{ article.date | date: "%-d %B %Y" }}</span>
+            </div>
+          </div>
+          <div class="article-aside">
+            <span class="risk-badge">{{ article.risk }}</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="empty-state">No articles in {{ page.title }} yet — check back as we publish more.</p>
+      {% endif %}
+    </div>
+  </main>
+
+  <footer>
+    <p class="disclaimer">General information published on this site is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. On Retainer is a pre-launch resource; commercial legal services are not currently offered. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+    <div class="footer-brand">
+      <a class="footer-mark" href="mailto:hello@onretainer.com.au">hello@onretainer.com.au</a>
+      <span class="footer-abn">© 2026 On Retainer ABN 95 932 683 020</span>
+      <div class="footer-links">
+        <a href="/Privacy">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="/Terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

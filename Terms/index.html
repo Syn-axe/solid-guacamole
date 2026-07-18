@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Use — On Retainer</title>
+  <meta name="description" content="Terms of Use for the On Retainer website, governing your access to and use of onretainer.com.au." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:      #0A0A0A;
+      --parchment: #F2EDE4;
+      --slate:     #9E9E93;
+      --seam:      #1E1E1C;
+      --signal:    #C8B89A;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--void);
+      color: var(--parchment);
+      font-family: 'Archivo', sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(200,184,154,0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 85% 20%, rgba(200,184,154,0.04) 0%, transparent 60%);
+      animation: ambientDrift 25s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes ambientDrift {
+      0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+      33%  { transform: translate(3%, 2%) scale(1.03); opacity: 0.85; }
+      66%  { transform: translate(-2%, 3%) scale(0.98); opacity: 1; }
+      100% { transform: translate(1%, -2%) scale(1.02); opacity: 0.9; }
+    }
+
+    main { flex: 1; position: relative; z-index: 10; }
+    a { color: inherit; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      background: linear-gradient(to bottom, var(--void) 60%, transparent);
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .logo {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+      text-decoration: none;
+    }
+
+    .status-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border: 1px solid var(--seam);
+      padding: 0.25rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--parchment); }
+
+    /* PAGE HEADER */
+    .page-header {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 4rem 1.5rem;
+    }
+
+    .eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 1.6rem;
+      display: block;
+    }
+
+    h1 {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+      margin-bottom: 1.4rem;
+    }
+
+    .standfirst {
+      font-size: 1.05rem;
+      color: var(--slate);
+      line-height: 1.8;
+      max-width: 620px;
+      margin-bottom: 2rem;
+    }
+
+    .signal-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--seam);
+    }
+
+    /* BODY */
+    .page-body { max-width: 900px; margin: 0 auto; padding: 2rem 4rem 3rem; }
+
+    .page-body p {
+      font-size: 1rem;
+      color: var(--parchment);
+      line-height: 1.9;
+      margin-bottom: 1.6rem;
+      opacity: 0.88;
+    }
+
+    .page-body h2 {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: var(--parchment);
+      margin: 3rem 0 1.2rem;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .page-body strong { font-weight: 500; color: var(--parchment); opacity: 1; }
+
+    .page-body ul {
+      margin: 0 0 1.6rem 1.4rem;
+      padding: 0;
+    }
+
+    .page-body ul li {
+      font-size: 1rem;
+      color: var(--parchment);
+      line-height: 1.9;
+      opacity: 0.88;
+      margin-bottom: 0.5rem;
+    }
+
+    /* General provisions sub-sections */
+    .provision {
+      margin-bottom: 2rem;
+    }
+
+    .provision-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--slate);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+
+    /* FOOTER */
+    footer {
+      position: relative;
+      z-index: 10;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.8rem 4rem 2.2rem;
+      border-top: 1px solid var(--seam);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .footer-abn {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-links a:hover { color: var(--signal); opacity: 1; }
+
+    .footer-divider {
+      font-size: 0.65rem;
+      color: var(--slate);
+      opacity: 0.4;
+    }
+
+    .disclaimer {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.8;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .disclaimer a { color: var(--slate); text-decoration: underline; text-underline-offset: 2px; }
+    .disclaimer a:hover { color: var(--parchment); }
+
+    .footer-mark {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-mark:hover { color: var(--signal); opacity: 1; }
+
+    @media (max-width: 700px) {
+      nav { padding: 1.5rem 1.8rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .status-tag { display: none; }
+      .page-header, .page-body { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .page-header { padding-top: 3rem; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-brand { align-items: flex-start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before { animation: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-group">
+      <a class="logo" href="/">On Retainer</a>
+      <span class="status-tag">Pre-launch</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/Intelligence">Intelligence</a></li>
+      <li><a href="https://www.linkedin.com/in/jack-farrell97" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <span class="eyebrow">Legal</span>
+      <h1>Terms of Use</h1>
+      <p class="standfirst">Last updated: July 2026</p>
+      <div class="signal-rule"></div>
+    </div>
+
+    <div class="page-body">
+
+      <p>On Retainer ABN 95 932 683 020 (<strong>On Retainer, we, us, our</strong>) owns and operates this Website. By accessing or using this Website at the URL: www.onretainer.com.au (<strong>Website</strong>), you agree to be bound by these Terms of Use.</p>
+
+      <p>We may amend these Terms of Use from time to time. Amendments take effect when published on this Website. Your continued access or use of this Website constitutes acceptance of the updated Terms of Use.</p>
+
+      <h2>General Information Disclaimer</h2>
+
+      <p>The content on this Website is intended to provide a summary and general overview of matters of interest only. It is not intended to be comprehensive, nor does it constitute legal advice. You should always obtain legal or other professional advice appropriate to your circumstances before acting or relying on any of the content.</p>
+
+      <h2>No Solicitor–Client Relationship</h2>
+
+      <p>Your use of this Website, receipt of information through this Website, subscription to our email updates, or communication with us does not create a solicitor–client relationship.</p>
+
+      <p>On Retainer is currently in a pre-launch phase. No commercial legal services are offered through this Website and nothing on this Website should be interpreted as an offer to provide such services.</p>
+
+      <h2>Intellectual Property Rights</h2>
+
+      <p>Unless otherwise indicated, On Retainer reserves all copyright in this Website and its contents. All trade mark and other rights in the "On Retainer" name and branding are also reserved. All content is provided to you pursuant to a non-exclusive, worldwide, non-transferable, revocable licence for personal, non-commercial use only.</p>
+
+      <p>You must not reproduce, modify, distribute, publish, or otherwise use any content outside the scope of that licence without our prior written consent.</p>
+
+      <p>Nothing in these Terms of Use transfers any intellectual property rights to you.</p>
+
+      <h2>Acceptable Use</h2>
+
+      <p>You must not use this Website in any way that is unlawful, fraudulent, or harmful, or in connection with any unlawful, fraudulent, or harmful purpose. Without limiting the foregoing, you must not:</p>
+
+      <ul>
+        <li>scrape, harvest, or systematically extract data or content from this Website;</li>
+        <li>attempt to gain unauthorised access to any part of this Website or its underlying systems;</li>
+        <li>transmit any malicious code, virus, or other harmful material through this Website; or</li>
+        <li>frame or mirror any part of this Website without our prior written consent.</li>
+      </ul>
+
+      <h2>Limitation of Liability</h2>
+
+      <p>We do not warrant that the content on this Website is complete, accurate, current, or free from errors or omissions. This Website may contain articles or other content that does not reflect subsequent developments in legislation, legal principles, or the interpretation of the law.</p>
+
+      <p>We do not warrant that this Website is free from computer viruses, malware, or other harmful components. To the maximum extent permitted by law, we exclude all liability for any loss or damage to your device, software, or data arising from accessing or using this Website.</p>
+
+      <p>To the maximum extent permitted by law, we exclude liability for all direct, indirect, and consequential losses, damages, costs and expenses (including loss of business or profits) arising out of or in connection with your use of this Website or reliance on its content.</p>
+
+      <p>Nothing in these Terms of Use excludes, restricts, or modifies any rights or remedies that cannot lawfully be excluded under applicable law, including the Australian Consumer Law.</p>
+
+      <h2>External Links</h2>
+
+      <p>This Website may contain links to third-party websites. We are not responsible for the content, accuracy, or availability of any external site. Including a link does not imply our endorsement of that website or its content. Use of any linked website is at your own risk.</p>
+
+      <h2>Privacy</h2>
+
+      <p>By using this Website or subscribing to our email updates, you acknowledge that we may collect personal information from you. Our collection and use of that information is governed by our <a href="/Privacy" style="text-decoration: underline; text-underline-offset: 2px;">Privacy Policy</a>.</p>
+
+      <h2>Governing Law</h2>
+
+      <p>These Terms of Use and your use of this Website are governed by the laws of Queensland, Australia. You submit to the exclusive jurisdiction of the courts of Queensland in relation to any dispute arising from these Terms of Use.</p>
+
+      <h2>General Provisions</h2>
+
+      <div class="provision">
+        <span class="provision-title">Severance</span>
+        <p style="margin-bottom: 0;">If any provision of these Terms of Use is found to be void, unlawful, or unenforceable, that provision will be severed and the remaining provisions will continue in full force and effect.</p>
+      </div>
+
+      <div class="provision">
+        <span class="provision-title">Entire Agreement</span>
+        <p style="margin-bottom: 0;">These Terms of Use constitute the entire agreement between you and On Retainer regarding your use of this Website and supersede any prior understanding or agreement, whether written or oral.</p>
+      </div>
+
+      <div class="provision">
+        <span class="provision-title">Waiver</span>
+        <p style="margin-bottom: 0;">A failure by us to act on a breach of these Terms of Use does not constitute a waiver of our right to act on that or any subsequent breach.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p class="disclaimer">General information published on this site and associated channels is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. On Retainer is a pre-launch resource; commercial legal services are not currently offered. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+    <div class="footer-brand">
+      <a class="footer-mark" href="mailto:hello@onretainer.com.au">hello@onretainer.com.au</a>
+      <span class="footer-abn">© 2026 On Retainer ABN 95 932 683 020</span>
+      <div class="footer-links">
+        <a href="/Privacy">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="/Terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

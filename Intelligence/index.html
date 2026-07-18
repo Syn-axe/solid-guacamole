@@ -1,0 +1,1244 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal Intelligence — On Retainer</title>
+  <meta name="description" content="Practical legal guidance for Australian businesses. Search by topic, practice area or legal issue." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Archivo:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --void:      #0A0A0A;
+      --panel:     #111111;
+      --border:    #1E1E1C;
+      --parchment: #F2EDE4;
+      --slate:     #9E9E93;
+      --signal:    #C8B89A;
+      --cat-contracts:   #C8B89A;
+      --cat-employment:  #8A9A7A;
+      --cat-privacy:     #7A8A9A;
+      --cat-ai:          #A07860;
+      --cat-governance:  #8A8880;
+      --cat-ip:          #9A8A7A;
+      --cat-disputes:    #8A7A7A;
+      --cat-directors:   #7A8870;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      background: var(--void);
+      color: var(--parchment);
+      font-family: 'Archivo', sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main { flex: 1; }
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 4rem;
+      background: linear-gradient(to bottom, var(--void) 60%, transparent);
+    }
+
+    .logo {
+      font-family: 'Archivo', sans-serif;
+      font-weight: 500;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--parchment);
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+
+    .status-tag {
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--slate);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+
+    .nav-links a {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      transition: color 0.25s;
+    }
+
+    .nav-links a:hover { color: var(--parchment); }
+
+    .hero {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 6rem 4rem 4rem;
+      animation: fadeUp 1s cubic-bezier(0.22,1,0.36,1) both;
+      position: relative;
+      isolation: isolate;
+    }
+
+    .hero-current-texture {
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      width: 100vw;
+      height: calc(100% + 2rem);
+      opacity: 0.035;
+      transform: translateX(-50%) scale(1.08);
+      transform-origin: center;
+      pointer-events: none;
+      z-index: -1;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 58%, transparent 100%);
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      width: 100vw;
+      height: calc(100% + 3rem);
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: -2;
+      background:
+        radial-gradient(ellipse 90% 72% at 60% 48%, rgba(22, 28, 38, 0.32) 0%, rgba(13, 14, 15, 0.1) 46%, rgba(13, 14, 15, 0.72) 100%),
+        linear-gradient(to bottom, transparent 41%, rgba(30, 42, 60, 0.12) 48%, rgba(30, 45, 65, 0.06) 54%, transparent 68%),
+        linear-gradient(to right, rgba(40, 55, 75, 0), rgba(50, 68, 90, 0.24) 20%, rgba(60, 80, 100, 0.34) 55%, rgba(50, 68, 90, 0.2) 80%, rgba(40, 55, 75, 0));
+      background-repeat: no-repeat;
+      background-size: 100% 100%, 100% 100%, 100% 1px;
+      background-position: center, center, center 48%;
+      -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%);
+      mask-image: linear-gradient(to bottom, #000 0%, #000 68%, transparent 100%);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--slate);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    /* DESIGN CONSTRAINT: Preserve this H1's current normal-flow placement.
+       Make future hero changes around it; do not alter its positioning context,
+       container geometry, alignment, margins, padding or transforms. */
+    .hero h1 {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 1.08;
+      color: var(--parchment);
+      margin-bottom: 1rem;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 0.95rem;
+      color: var(--slate);
+      margin-bottom: 3rem;
+      max-width: 520px;
+    }
+
+    .search-wrap {
+      position: relative;
+      max-width: 100%;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--parchment);
+      font-family: 'Archivo', sans-serif;
+      font-weight: 300;
+      font-size: 0.95rem;
+      padding: 1.1rem 3.5rem 1.1rem 1.5rem;
+      outline: none;
+      transition: border-color 0.25s;
+      letter-spacing: 0.02em;
+      -webkit-appearance: none;
+      border-radius: 0;
+    }
+
+    .search-input::placeholder { color: var(--slate); opacity: 0.6; }
+    .search-input:focus { border-color: var(--signal); }
+
+    .search-icon {
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--slate);
+      opacity: 0.5;
+      font-size: 0.9rem;
+      pointer-events: none;
+    }
+
+    .section-divider {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 4rem;
+    }
+
+    .signal-rule {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      margin: 0;
+    }
+
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 4rem 4rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: 1.6rem;
+      color: var(--parchment);
+      letter-spacing: -0.01em;
+    }
+
+    .section-meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      opacity: 0.8;
+    }
+
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .collection-item {
+      background: color-mix(in srgb, var(--tile-color, var(--signal)) 6%, var(--void));
+      border-top: 3px solid var(--tile-color, var(--border));
+      padding: 1.6rem 1.8rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: background 0.25s;
+      cursor: pointer;
+    }
+
+    .collection-item:hover { background: color-mix(in srgb, var(--tile-color, var(--signal)) 13%, var(--void)); }
+
+    .back-to-browse {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--parchment);
+      font-family: 'Archivo', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .back-to-browse:hover { border-color: var(--signal); color: var(--signal); }
+
+    .empty-state {
+      font-size: 0.88rem;
+      color: var(--slate);
+      opacity: 0.8;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .collection-rule {
+      width: 2rem;
+      height: 2px;
+      margin-bottom: 0.3rem;
+      transition: width 0.3s;
+    }
+
+    .collection-item:hover .collection-rule { width: 3rem; }
+
+    .collection-name {
+      font-size: 0.85rem;
+      color: var(--parchment);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
+
+    .collection-count {
+      font-size: 0.7rem;
+      color: var(--slate);
+      opacity: 0.8;
+      letter-spacing: 0.05em;
+    }
+
+    .articles-list { display: flex; flex-direction: column; gap: 0; }
+
+    .collections-section { padding-bottom: 2.5rem; }
+
+    .recently-updated-section {
+      padding-top: 5rem;
+      padding-bottom: 5.5rem;
+    }
+
+    .recently-updated-section .section-header { margin-bottom: 3.25rem; }
+    .recently-updated-section .section-title { font-size: 2rem; }
+    .recently-updated-section .article-card { padding: 3rem 0; }
+    .recently-updated-section .article-main { gap: 0.65rem; }
+    .recently-updated-section .article-summary {
+      max-width: 680px;
+      line-height: 1.8;
+    }
+    .recently-updated-section .article-meta-row { margin-top: 0.7rem; }
+
+    .article-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      position: relative;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    .article-card:last-child { border-bottom: 1px solid var(--border); }
+
+    .article-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .article-card:hover::before { opacity: 1; }
+    .article-card:hover { background: rgba(242,237,228,0.015); }
+
+    .article-card[data-cat="Commercial Contracts"]::before   { background: var(--cat-contracts); }
+    .article-card[data-cat="Employment"]::before             { background: var(--cat-employment); }
+    .article-card[data-cat="Privacy"]::before                { background: var(--cat-privacy); }
+    .article-card[data-cat="Artificial Intelligence"]::before{ background: var(--cat-ai); }
+    .article-card[data-cat="Governance"]::before             { background: var(--cat-governance); }
+    .article-card[data-cat="Intellectual Property"]::before  { background: var(--cat-ip); }
+    .article-card[data-cat="Disputes"]::before               { background: var(--cat-disputes); }
+    .article-card[data-cat="Director Duties"]::before        { background: var(--cat-directors); }
+
+    .article-main { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .article-category {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      opacity: 0.6;
+      color: var(--signal);
+    }
+
+    .article-card[data-cat="Employment"] .article-category         { color: var(--cat-employment); }
+    .article-card[data-cat="Privacy"] .article-category            { color: var(--cat-privacy); }
+    .article-card[data-cat="Artificial Intelligence"] .article-category { color: var(--cat-ai); }
+    .article-card[data-cat="Governance"] .article-category         { color: var(--cat-governance); }
+    .article-card[data-cat="Intellectual Property"] .article-category { color: var(--cat-ip); }
+    .article-card[data-cat="Disputes"] .article-category           { color: var(--cat-disputes); }
+    .article-card[data-cat="Director Duties"] .article-category    { color: var(--cat-directors); }
+
+    .article-title {
+      font-family: 'Newsreader', serif;
+      font-weight: 300;
+      font-size: 1.25rem;
+      color: var(--parchment);
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+      transition: opacity 0.2s;
+    }
+
+    .article-card:hover .article-title { opacity: 0.85; }
+
+    .article-summary {
+      font-size: 0.85rem;
+      color: var(--slate);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .article-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .article-meta-item {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.8;
+      letter-spacing: 0.05em;
+    }
+
+    .article-meta-sep {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--slate);
+      opacity: 0.3;
+    }
+
+    .article-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: space-between;
+      min-width: 120px;
+    }
+
+    .risk-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.3rem 0.7rem;
+      border: 1px solid var(--border);
+      color: var(--slate);
+      opacity: 0.85;
+      white-space: nowrap;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 1.8rem 4rem 2.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .footer-abn {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.65rem;
+      letter-spacing: 0.06em;
+      color: var(--slate);
+      opacity: 0.8;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-links a:hover { color: var(--signal); opacity: 1; }
+
+    .footer-divider {
+      font-size: 0.65rem;
+      color: var(--slate);
+      opacity: 0.4;
+    }
+
+    .disclaimer {
+      font-size: 0.68rem;
+      color: var(--slate);
+      opacity: 0.8;
+      line-height: 1.65;
+      max-width: 680px;
+    }
+
+    .disclaimer a { color: var(--slate); text-decoration: underline; text-underline-offset: 2px; }
+    .disclaimer a:hover { color: var(--parchment); }
+
+    .footer-mark {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--slate);
+      opacity: 0.8;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-decoration: none;
+      transition: color 0.25s, opacity 0.25s;
+    }
+
+    .footer-mark:hover { color: var(--signal); opacity: 1; }
+
+    @media (max-width: 900px) {
+      .collections-grid  { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 700px) {
+      nav { padding: 1.5rem 1.8rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      .hero, .section, .section-divider, footer { padding-left: 1.8rem; padding-right: 1.8rem; }
+      .status-tag { display: none; }
+      footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .footer-brand { align-items: flex-start; }
+      .hero { padding-top: 3.5rem; }
+      .collections-grid  { grid-template-columns: 1fr; }
+      .article-card      { grid-template-columns: 1fr; }
+      .article-aside     { flex-direction: row; align-items: center; margin-top: 0.8rem; }
+      .footer-row        { flex-direction: column; align-items: flex-start; gap: 1rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero { animation: none; }
+    }
+
+    /* ─── BOOKSHELF COMPONENT ────────────────────────── */
+
+    .bookcase-container {
+      display: flex;
+      flex-direction: column;
+      gap: 120px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .library-display {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .book-row {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      column-gap: 0;
+      row-gap: 30px;
+      justify-content: space-evenly;
+      align-items: flex-end;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 4px;
+    }
+
+    .book-wrapper {
+      width: 160px;
+      height: 232px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .book-cover {
+      position: relative;
+      width: 160px;
+      height: 232px;
+      border-radius: 0 6px 6px 0;
+      box-sizing: border-box;
+      transition: transform 200ms ease,
+                  box-shadow 200ms ease,
+                  border-color 200ms ease;
+      box-shadow:
+        0 8px 14px rgba(0,0,0,0.38),
+        inset -1px 0 3px rgba(255,255,255,0.03);
+    }
+
+    .book--commercial-contracts .book-cover {
+      background: linear-gradient(135deg, #1e1608 0%, #130f04 40%, #261d0a 100%);
+      border: 1px solid #130f04;
+    }
+    .book--employment .book-cover {
+      background: linear-gradient(135deg, #1c1508 0%, #110e04 40%, #231a09 100%);
+      border: 1px solid #110e04;
+    }
+    .book--privacy .book-cover {
+      background: linear-gradient(135deg, #0f2347 0%, #0a1730 40%, #173263 100%);
+      border: 1px solid #0a1730;
+    }
+    .book--ai .book-cover {
+      background: linear-gradient(135deg, #2a1406 0%, #1a0c03 40%, #341a08 100%);
+      border: 1px solid #1a0c03;
+    }
+    .book--governance .book-cover {
+      background: linear-gradient(135deg, #1a1508 0%, #100e04 40%, #201a09 100%);
+      border: 1px solid #100e04;
+    }
+    .book--ip .book-cover {
+      background: linear-gradient(135deg, #1b1700 0%, #111000 40%, #221e00 100%);
+      border: 1px solid #111000;
+    }
+    .book--director-duties .book-cover {
+      background: linear-gradient(135deg, #0f2040 0%, #09152c 40%, #152a54 100%);
+      border: 1px solid #09152c;
+    }
+    .book--disputes .book-cover {
+      background: linear-gradient(135deg, #2d0b18 0%, #1c0510 40%, #380e1e 100%);
+      border: 1px solid #1c0510;
+    }
+
+    .realistic-spine {
+      position: absolute;
+      top: 0; left: 0;
+      width: 20px;
+      height: 100%;
+      z-index: 5;
+      background: linear-gradient(to right,
+        rgba(0,0,0,0.48)        0%,
+        rgba(255,255,255,0.07)  15%,
+        rgba(0,0,0,0.16)        35%,
+        rgba(0,0,0,0.58)        75%,
+        rgba(0,0,0,0.66)        80%,
+        rgba(255,255,255,0.10)  83%,
+        transparent            100%
+      );
+    }
+
+    .gold-foil-border {
+      position: absolute;
+      top: 12px; left: 28px; right: 12px; bottom: 12px;
+      border: 1px solid rgba(212,175,55,0.35);
+      pointer-events: none;
+      border-radius: 2px;
+      box-shadow: inset 0 0 3px rgba(212,175,55,0.06);
+    }
+
+    .title-area {
+      position: absolute;
+      top: 22px; left: 34px; right: 18px;
+      text-align: center;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .sector-area {
+      position: absolute;
+      bottom: 60px; left: 30px; right: 14px;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .white-archivo-title {
+      font-family: 'Archivo', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin: 0;
+      color: #ffffff;
+      white-space: nowrap;
+      filter:
+        drop-shadow(0px -1px 0px rgba(0,0,0,0.95))
+        drop-shadow(0px 1px 0.5px rgba(255,255,255,0.2));
+    }
+
+    .volume-label {
+      font-family: 'Archivo', sans-serif;
+      font-size: 9px;
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0;
+      background: linear-gradient(to bottom, #FFF3D1 0%, #D4AF37 50%, #AA7C11 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0px -0.5px 0px rgba(0,0,0,0.9));
+    }
+
+    .gold-sector-title {
+      font-family: 'Archivo', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.2;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin: 0;
+      background: linear-gradient(to bottom, #FFF7D6 0%, #D4AF37 40%, #B28D24 85%, #6A4E0B 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter:
+        drop-shadow(0px -1px 0px rgba(0,0,0,0.95))
+        drop-shadow(0px 1px 0.5px rgba(255,255,255,0.15));
+    }
+
+    .antique-shelf {
+      position: relative;
+      width: 100%;
+      height: 24px;
+      z-index: 5;
+      margin-top: -4px;
+      border-radius: 2px;
+      background: linear-gradient(to bottom,
+        #4a200c  0%,
+        #361607  15%,
+        #2b1104  70%,
+        #190902  100%
+      );
+      box-shadow:
+        0 3px 5px rgba(0,0,0,0.30),
+        0 10px 20px rgba(0,0,0,0.38),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+    }
+
+    .shelf-bevel {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 4px;
+      background: rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(0,0,0,0.28);
+    }
+
+    .book-wrapper:hover .book-cover {
+      transform: translateY(-3px);
+      border-color: rgba(212,175,55,0.28);
+      box-shadow:
+        0 10px 18px rgba(0,0,0,0.48),
+        inset -1px 0 3px rgba(255,255,255,0.04);
+    }
+
+    .book-description-panel {
+      margin-top: 2rem;
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .book-description-text {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: var(--slate);
+      text-align: center;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+      max-width: 520px;
+    }
+
+    .book-description-text.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .book-wrapper:focus-visible { outline: none; }
+    .book-wrapper:focus-visible .book-cover {
+      box-shadow: 0 0 0 2px rgba(212,175,55,0.42), 0 9px 16px rgba(0,0,0,0.42);
+    }
+
+    /* Mobile — 2 books per row */
+    @media (max-width: 740px) {
+      .book-row {
+        flex-wrap: wrap;
+        max-width: 350px;
+      }
+      .bookcase-container {
+        gap: 60px;
+      }
+      .antique-shelf { max-width: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo-group">
+      <a class="logo" href="/">On Retainer</a>
+      <span class="status-tag">Pre-launch</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/Intelligence">Intelligence</a></li>
+      <li><a href="https://www.linkedin.com/in/jack-farrell97" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <div class="hero">
+      <canvas class="hero-current-texture" id="heroCurrentTexture" aria-hidden="true"></canvas>
+      <span class="hero-eyebrow">On Retainer</span>
+      <h1>Legal Intelligence</h1>
+      <p class="hero-sub">Practical legal guidance for Australian businesses. Search by topic, practice area or legal issue.</p>
+      <div class="search-wrap">
+        <input class="search-input" type="text" placeholder="Search contracts, employment, privacy..." id="searchInput" />
+        <span class="search-icon">⌕</span>
+      </div>
+    </div>
+
+    <div class="section-divider"><div class="signal-rule"></div></div>
+
+    <!-- RESULTS MODE — hidden by default, shown when searching -->
+    <div class="section" id="resultsSection" style="display:none;">
+      <div class="section-header">
+        <h2 class="section-title" id="resultsTitle">Results</h2>
+        <button id="resultsBack" type="button" class="back-to-browse">← Back to browse</button>
+      </div>
+      <p class="empty-state" id="resultsEmpty" style="display:none;">No articles match that search yet — try a different term.</p>
+      <div class="articles-list" id="resultsList"></div>
+    </div>
+
+    <!-- BROWSE MODE — hidden while searching -->
+    <div id="browseSections">
+
+    <!-- COLLECTIONS -->
+    <div class="section collections-section">
+      <div class="section-header">
+        <h2 class="section-title">Collections</h2>
+        <span class="section-meta">Browse by practice area</span>
+      </div>
+
+      <div class="bookcase-container">
+
+        <!-- Shelf 1: Volumes I–IV -->
+        <div class="library-display">
+          <div class="book-row" role="list">
+
+            <div class="book-wrapper book--commercial-contracts" role="listitem" tabindex="0"
+              aria-label="Commercial Contracts"
+              data-url="/Intelligence/category/commercial-contracts/"
+              data-description="Practical guidance on drafting, negotiating and interpreting commercial contracts for Australian businesses.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume I</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Commercial<br>Contracts</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-wrapper book--employment" role="listitem" tabindex="0"
+              aria-label="Employment"
+              data-url="/Intelligence/category/employment/"
+              data-description="Employment law essentials for Australian founders and SMEs — hiring, managing and terminating staff.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume II</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Employment</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-wrapper book--privacy" role="listitem" tabindex="0"
+              aria-label="Privacy"
+              data-url="/Intelligence/category/privacy/"
+              data-description="Privacy and data-handling obligations for Australian businesses, explained in plain terms.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume III</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Privacy</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-wrapper book--ai" role="listitem" tabindex="0"
+              aria-label="Artificial Intelligence"
+              data-url="/Intelligence/category/artificial-intelligence/"
+              data-description="Legal considerations for Australian businesses adopting or building with AI.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume IV</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Artificial<br>Intelligence</h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="antique-shelf"><div class="shelf-bevel"></div></div>
+        </div>
+
+        <!-- Shelf 2: Volumes V–VIII -->
+        <div class="library-display">
+          <div class="book-row" role="list">
+
+            <div class="book-wrapper book--governance" role="listitem" tabindex="0"
+              aria-label="Governance"
+              data-url="/Intelligence/category/governance/"
+              data-description="Corporate governance guidance for Australian founders and boards.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume V</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Governance</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-wrapper book--ip" role="listitem" tabindex="0"
+              aria-label="Intellectual Property"
+              data-url="/Intelligence/category/intellectual-property/"
+              data-description="Protecting and commercialising IP for Australian founders and SMEs.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume VI</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Intellectual<br>Property</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-wrapper book--director-duties" role="listitem" tabindex="0"
+              aria-label="Director Duties"
+              data-url="/Intelligence/category/director-duties/"
+              data-description="What Australian directors need to know about their legal duties and obligations.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume VII</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Director<br>Duties</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="book-wrapper book--disputes" role="listitem" tabindex="0"
+              aria-label="Disputes"
+              data-url="/Intelligence/category/disputes/"
+              data-description="Practical guidance for Australian businesses navigating commercial disputes.">
+              <div class="book-cover">
+                <div class="realistic-spine"></div>
+                <div class="gold-foil-border"></div>
+                <div class="title-area">
+                  <h2 class="white-archivo-title">On Retainer Journal</h2>
+                  <span class="volume-label">Volume VIII</span>
+                </div>
+                <div class="sector-area">
+                  <h3 class="gold-sector-title">Disputes</h3>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div class="antique-shelf"><div class="shelf-bevel"></div></div>
+        </div>
+
+      </div>
+
+      <!-- Description panel -->
+      <div class="book-description-panel" aria-live="polite">
+        <p class="book-description-text" id="bookDescText"></p>
+      </div>
+
+    </div>
+
+    <div class="section-divider"><div class="signal-rule"></div></div>
+
+    <!-- ARTICLES — AUTO-GENERATED FROM _articles COLLECTION -->
+    <div class="section recently-updated-section">
+      <div class="section-header">
+        <h2 class="section-title">Recently Updated</h2>
+        <span class="section-meta">{{ site.articles | size }} {% if site.articles.size == 1 %}article{% else %}articles{% endif %}</span>
+      </div>
+
+      <div class="articles-list" id="articleList">
+        {% assign sorted_articles = site.articles | sort: "date" | reverse %}
+        {% for article in sorted_articles %}
+        <a href="{{ article.url }}" class="article-card" data-cat="{{ article.category }}">
+          <div class="article-main">
+            <span class="article-category">{{ article.category }}</span>
+            <span class="article-title">{{ article.title }}</span>
+            <span class="article-summary">{{ article.summary | truncate: 160 }}</span>
+            <div class="article-meta-row">
+              <span class="article-meta-item">Updated {{ article.date | date: "%-d %B %Y" }}</span>
+              <span class="article-meta-sep"></span>
+              <span class="article-meta-item">{{ article.read_time }}</span>
+            </div>
+          </div>
+          <div class="article-aside">
+            <span class="risk-badge">{{ article.risk }}</span>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <p class="disclaimer">General information published on this site is for educational purposes only and does not constitute legal advice. No lawyer-client relationship is formed by reading this content. On Retainer is a pre-launch resource; commercial legal services are not currently offered. For advice specific to your circumstances, consult a qualified Australian legal practitioner.</p>
+    <div class="footer-brand">
+      <a class="footer-mark" href="mailto:hello@onretainer.com.au">hello@onretainer.com.au</a>
+      <span class="footer-abn">© 2026 On Retainer ABN 95 932 683 020</span>
+      <div class="footer-links">
+        <a href="/Privacy">Privacy Policy</a>
+        <span class="footer-divider">|</span>
+        <a href="/Terms">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
+  <script>
+    /* Static, publication-strength rendering of the landing page current. */
+    (function () {
+      var canvas = document.getElementById('heroCurrentTexture');
+      if (!canvas || !canvas.getContext) return;
+
+      var ctx = canvas.getContext('2d');
+
+      function drawCurrentTexture() {
+        var bounds = canvas.getBoundingClientRect();
+        var width = Math.max(1, Math.round(bounds.width));
+        var height = Math.max(1, Math.round(bounds.height));
+        var dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = Math.round(width * dpr);
+        canvas.height = Math.round(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        ctx.clearRect(0, 0, width, height);
+
+        var horizon = height * 0.48;
+        var lines = 22;
+
+        for (var i = 0; i < lines; i++) {
+          var depth = i / (lines - 1);
+          var y = horizon + Math.pow(depth, 1.55) * height * 0.5;
+          var amplitude = 1.5 + depth * 8;
+          var frequency = 0.007 - depth * 0.003;
+          var phase = i * 0.82;
+
+          ctx.beginPath();
+          for (var x = -40; x <= width + 40; x += 8) {
+            var wave = Math.sin(x * frequency + phase) * amplitude;
+            var secondary = Math.sin(x * frequency * 0.42 + phase * 1.7) * amplitude * 0.3;
+            var pointY = y + wave + secondary;
+            if (x === -40) ctx.moveTo(x, pointY);
+            else ctx.lineTo(x, pointY);
+          }
+
+          ctx.strokeStyle = 'rgba(200,184,154,' + (0.38 + depth * 0.42) + ')';
+          ctx.lineWidth = 0.7 + depth * 0.7;
+          ctx.stroke();
+        }
+      }
+
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(drawCurrentTexture, 120);
+      }, { passive: true });
+
+      drawCurrentTexture();
+    }());
+  </script>
+  <script>
+    const input = document.getElementById('searchInput');
+    const browseSections = document.getElementById('browseSections');
+    const resultsSection = document.getElementById('resultsSection');
+    const resultsList = document.getElementById('resultsList');
+    const resultsTitle = document.getElementById('resultsTitle');
+    const resultsEmpty = document.getElementById('resultsEmpty');
+    const resultsBack = document.getElementById('resultsBack');
+
+    let fuse = null;
+    let debounceTimer = null;
+
+    // Load the lightweight search index once, not the full rendered article list.
+    fetch('/search-index.json')
+      .then(res => res.json())
+      .then(data => {
+        fuse = new Fuse(data, {
+          keys: ['title', 'summary', 'category'],
+          threshold: 0.35,
+        });
+      })
+      .catch(() => {
+        // Fails gracefully — browse mode (categories, recently updated) still works
+        // even if the search index can't be loaded.
+      });
+
+    function renderResults(query) {
+      if (!fuse) return;
+      const matches = fuse.search(query).map(r => r.item);
+
+      resultsTitle.textContent = `${matches.length} result${matches.length === 1 ? '' : 's'} for "${query}"`;
+      resultsEmpty.style.display = matches.length === 0 ? 'block' : 'none';
+
+      resultsList.innerHTML = matches.map(article => `
+        <a href="${article.url}" class="article-card">
+          <div class="article-main">
+            <span class="article-category">${article.category}</span>
+            <span class="article-title">${article.title}</span>
+            <span class="article-summary">${article.summary}</span>
+            <div class="article-meta-row">
+              <span class="article-meta-item">Updated ${article.date}</span>
+              <span class="article-meta-sep"></span>
+              <span class="article-meta-item">${article.read_time}</span>
+            </div>
+          </div>
+          <div class="article-aside">
+            <span class="risk-badge">${article.risk}</span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    function enterResultsMode(query) {
+      browseSections.style.display = 'none';
+      resultsSection.style.display = '';
+      renderResults(query);
+    }
+
+    function exitResultsMode() {
+      browseSections.style.display = '';
+      resultsSection.style.display = 'none';
+      input.value = '';
+    }
+
+    input.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      const query = input.value.trim();
+
+      if (!query) {
+        exitResultsMode();
+        return;
+      }
+
+      // Small debounce so results mode doesn't flicker on every keystroke.
+      debounceTimer = setTimeout(() => enterResultsMode(query), 150);
+    });
+
+    resultsBack.addEventListener('click', exitResultsMode);
+
+    /* ── Bookshelf navigation ── */
+    (function () {
+      var books    = document.querySelectorAll('.book-wrapper');
+      var descText = document.getElementById('bookDescText');
+
+      function showDesc(text) {
+        descText.textContent = text;
+        descText.classList.add('is-visible');
+      }
+
+      function hideDesc() {
+        descText.classList.remove('is-visible');
+      }
+
+      books.forEach(function (book) {
+        book.addEventListener('mouseenter', function () {
+          showDesc(book.dataset.description || '');
+        });
+        book.addEventListener('mouseleave', function () {
+          hideDesc();
+        });
+        book.addEventListener('click', function () {
+          var url = book.dataset.url;
+          if (url) window.location.href = url;
+        });
+        book.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            book.click();
+          }
+        });
+      });
+    }());
+  </script>
+
+
+</body>
+</html>

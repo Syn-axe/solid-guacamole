@@ -1,0 +1,17 @@
+title: On Retainer
+description: Legal Intelligence for Australian Founders and SMEs
+url: "https://onretainer.com.au"
+
+permalink: /Intelligence/:slug/
+
+collections:
+  articles:
+    output: true
+    permalink: /Intelligence/:slug/
+
+defaults:
+  - scope:
+      path: ""
+      type: "articles"
+    values:
+      layout: "article"
