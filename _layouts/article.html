@@ -516,6 +516,12 @@
       <h1>{{ page.title }}</h1>
       <p class="article-standfirst">{{ page.summary }}</p>
 
+      {% assign article_words = content | strip_html | number_of_words %}
+      {% assign article_minutes = article_words | divided_by: 200.0 | ceil %}
+      {% if article_minutes < 1 %}
+        {% assign article_minutes = 1 %}
+      {% endif %}
+
       <div class="article-meta-strip" aria-label="Article details">
         <div class="meta-item">
           <span class="meta-label">Category</span>
@@ -523,7 +529,7 @@
         </div>
         <div class="meta-item">
           <span class="meta-label">Read Time</span>
-          <span class="meta-value">{{ page.read_time }}</span>
+          <span class="meta-value">{{ article_minutes }} min read</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Published</span>
