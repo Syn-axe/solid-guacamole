@@ -110,8 +110,9 @@
 
     .article-meta-strip {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: 1.2fr 1.1fr 0.8fr 1.1fr;
+      gap: clamp(0.75rem, 2vw, 1.5rem);
+      width: 100%;
       padding: 1rem 0 1.15rem;
       border-top: 1px solid var(--border-faint);
       border-bottom: 1px solid var(--border-faint);
@@ -285,14 +286,17 @@
       margin: 5rem 0 0.85rem;
     }
 
-    .article-body .footnotes {
+    .article-body .footnotes,
+    .article-body ol.footnotes {
+      width: 100%;
       margin: 0;
       padding: 0;
     }
 
     .article-body .footnotes::before { display: none; }
 
-    .article-body .footnotes ol {
+    .article-body .footnotes ol,
+    .article-body ol.footnotes {
       list-style: none;
       counter-reset: further-reading;
       margin: 0;
@@ -310,13 +314,25 @@
       opacity: 1;
     }
 
+    .article-body .footnotes li::marker { content: ''; }
+
     .article-body .footnotes li::before {
       content: counter(further-reading);
+      grid-column: 1;
+      grid-row: 1;
       font-family: 'Archivo', sans-serif;
       font-size: 0.58rem;
       line-height: 1.7;
       color: var(--gold);
     }
+
+    .article-body .footnotes li > p {
+      grid-column: 2;
+      grid-row: 1;
+      min-width: 0;
+    }
+
+    .article-body .footnotes li > .fn-num { display: none; }
 
     .article-body .footnotes li:last-child { border-bottom: 0; }
 
@@ -440,7 +456,9 @@
       .status-tag { display: none; }
       .article-header, .article-body { padding-left: 1.8rem; padding-right: 1.8rem; }
       .article-header { padding-top: 3rem; }
-      .article-meta-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .article-meta-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer-brand { align-items: flex-start; }
     }
@@ -494,7 +512,7 @@
       <div class="article-meta-strip" aria-label="Article details">
         <div class="meta-item">
           <span class="meta-label">Category</span>
-          <span class="meta-value meta-value--accent">{{ page.category }}</span>
+          <span class="meta-value">{{ page.category }}</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Risk Level</span>
