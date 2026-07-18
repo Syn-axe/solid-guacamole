@@ -361,9 +361,16 @@
     }
 
     @media (max-width: 700px) {
-      nav { padding: 1.5rem 1.8rem; }
+      nav { padding: 0.75rem 1.8rem; }
+      .nav-logo { min-height: 2.75rem; display: flex; align-items: center; }
       .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.6rem; letter-spacing: 0.08em; }
+      .nav-links a {
+        min-height: 2.75rem;
+        display: flex;
+        align-items: center;
+        font-size: 0.6rem;
+        letter-spacing: 0.08em;
+      }
       .status-tag { display: none; }
       .hero { padding: 6rem 1.8rem 3rem; }
       .hero-bottom { left: 1.8rem; right: 1.8rem; }
@@ -371,8 +378,19 @@
       .signup-form { width: 100%; }
       .signup-input { width: 100%; }
       .cta-primary { padding-inline: 1.2rem; }
-      footer { grid-template-columns: 1fr; padding: 2.5rem 1.8rem; }
-      .footer-meta { align-items: flex-start; }
+      footer {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2rem 1.8rem;
+      }
+      .footer-disclaimer { line-height: 1.55; }
+      .footer-meta { align-items: flex-start; gap: 0.55rem; }
+    }
+
+    @media (max-width: 360px) {
+      .signup-row { flex-direction: column; }
+      .signup-input { border-right: 1px solid rgba(232, 224, 208, 0.35); }
+      .cta-primary { width: 100%; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -499,6 +517,7 @@
     function init() {
       W = canvas.width  = window.innerWidth;
       H = canvas.height = window.innerHeight;
+      HORIZON = W <= 700 ? 0.46 : 0.58;
       ripples = [];
 
       /*
