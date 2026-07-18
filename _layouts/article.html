@@ -111,10 +111,10 @@
     .article-meta-strip {
       display: grid;
       grid-template-columns: repeat(4, max-content);
-      justify-content: space-between;
-      gap: 1.5rem;
+      justify-content: center;
+      column-gap: clamp(2rem, 5vw, 3rem);
       width: 100%;
-      padding: 1rem 0 1.15rem;
+      padding: 0.8rem 0 0.9rem;
       border-top: 1px solid var(--border-faint);
       border-bottom: 1px solid var(--border-faint);
     }
@@ -133,6 +133,7 @@
       line-height: 1.2;
       text-transform: uppercase;
       color: var(--slate);
+      opacity: 0.72;
     }
 
     .meta-value {
@@ -519,16 +520,16 @@
           <span class="meta-value">{{ page.category }}</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Risk Level</span>
-          <span class="meta-value meta-value--accent">{{ page.risk }}</span>
-        </div>
-        <div class="meta-item">
           <span class="meta-label">Read Time</span>
           <span class="meta-value">{{ page.read_time }}</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Published</span>
           <span class="meta-value">{{ page.date | date: "%-d %B %Y" }}</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Risk Level</span>
+          <span class="meta-value meta-value--accent">{{ page.risk }}</span>
         </div>
       </div>
     </div>
