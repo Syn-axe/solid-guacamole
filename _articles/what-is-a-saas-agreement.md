@@ -85,11 +85,10 @@ A SaaS agreement is not simply a document that grants access to software. It est
 
 For advice specific to your circumstances, consult a qualified Australian legal practitioner.
 
-<div class="further-reading">
-  <p class="further-reading-label">Further Reading</p>
-  <ol class="footnotes">
-    <li><span class="fn-num">1</span><span><a href="https://www5.austlii.edu.au/au/legis/cth/consol_act/caca2010265/sch2.html" target="_blank" rel="noopener">ss 23–27, <em>Australian Consumer Law</em> (Schedule 2 to the <em>Competition and Consumer Act 2010</em> (Cth))</a>.</span></li>
-    <li><span class="fn-num">2</span><span><a href="https://www5.austlii.edu.au/au/legis/cth/consol_act/caca2010265/sch2.html" target="_blank" rel="noopener">s 24(1), <em>Australian Consumer Law</em> (Schedule 2 to the <em>Competition and Consumer Act 2010</em> (Cth))</a>.</span></li>
-    <li><span class="fn-num">3</span><span><a href="https://www5.austlii.edu.au/au/legis/cth/consol_act/caca2010265/sch2.html" target="_blank" rel="noopener">ss 23(2A), 23(2B), 24(1)(a)(ii), <em>Australian Consumer Law</em> (Schedule 2 to the <em>Competition and Consumer Act 2010</em> (Cth))</a>.</span></li>
-  </ol>
-</div>
+### Further reading
+
+[^1]: [ss 23–27, *Australian Consumer Law* (Schedule 2 to the *Competition and Consumer Act 2010* (Cth))](https://www5.austlii.edu.au/au/legis/cth/consol_act/caca2010265/sch2.html).
+
+[^2]: [s 24(1), *Australian Consumer Law* (Schedule 2 to the *Competition and Consumer Act 2010* (Cth))](https://www5.austlii.edu.au/au/legis/cth/consol_act/caca2010265/sch2.html).
+
+[^3]: [ss 23(2A), 23(2B), 24(1)(a)(ii), *Australian Consumer Law* (Schedule 2 to the *Competition and Consumer Act 2010* (Cth))](https://www5.austlii.edu.au/au/legis/cth/consol_act/caca2010265/sch2.html).
