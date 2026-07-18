@@ -216,8 +216,8 @@
     .article-body {
       max-width: 800px;
       margin: 0 auto;
-      /* Top padding is the primary visual separator from the meta strip */
-      padding: var(--sp-16) 4rem var(--sp-24);
+      /* Keep the Quick Answer connected to the hero without crowding it. */
+      padding: var(--sp-8) 4rem var(--sp-24);
     }
 
     /* Body paragraphs — Newsreader for editorial warmth */
@@ -305,6 +305,11 @@
     }
 
     .article-body sup a:hover { opacity: 0.8; }
+
+    .article-body .footnote-reference {
+      color: var(--slate);
+      opacity: 0.4;
+    }
 
     /* ─── BLOCKQUOTE ─── */
     .article-body blockquote {
@@ -452,6 +457,8 @@
 
     .article-body .footnotes li:last-child { border-bottom: none; }
 
+    .article-body .footnotes li { scroll-margin-top: 6rem; }
+
     .article-body .fn-num {
       font-family: 'Archivo', sans-serif;
       font-size: 0.62rem;
@@ -555,7 +562,7 @@
       footer { padding-left: 1.8rem; padding-right: 1.8rem; }
       .status-tag { display: none; }
       .article-header { padding: 5rem 1.8rem var(--sp-8); }
-      .article-body { padding: var(--sp-12) 1.8rem var(--sp-16); }
+      .article-body { padding: var(--sp-8) 1.8rem var(--sp-16); }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer-brand { align-items: flex-start; }
       .article-meta-strip { flex-wrap: wrap; gap: var(--sp-5); justify-content: flex-start; }
@@ -645,6 +652,81 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    /* Convert any unprocessed [^1] references into accessible superscripts. */
+    (function () {
+      var article = document.querySelector('.article-body');
+      if (!article || !document.createTreeWalker) return;
+
+      var targets = {};
+      var footnotes = article.querySelectorAll('.footnotes li');
+
+      footnotes.forEach(function (item, index) {
+        var numberNode = item.querySelector('.fn-num');
+        var numberMatch = numberNode && numberNode.textContent.match(/\d+/);
+        var number = numberMatch ? numberMatch[0] : String(index + 1);
+
+        if (!item.id) item.id = 'fn-' + number;
+        targets[number] = item.id;
+      });
+
+      var walker = document.createTreeWalker(
+        article,
+        NodeFilter.SHOW_TEXT,
+        {
+          acceptNode: function (node) {
+            if (!/\[\^\d+\]/.test(node.nodeValue)) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
+            if (node.parentElement.closest('sup, .footnotes, script, style')) {
+              return NodeFilter.FILTER_REJECT;
+            }
+
+            return NodeFilter.FILTER_ACCEPT;
+          }
+        }
+      );
+
+      var textNodes = [];
+      while (walker.nextNode()) textNodes.push(walker.currentNode);
+
+      textNodes.forEach(function (textNode) {
+        var fragment = document.createDocumentFragment();
+        var text = textNode.nodeValue;
+        var pattern = /\[\^(\d+)\]/g;
+        var lastIndex = 0;
+        var match;
+
+        while ((match = pattern.exec(text)) !== null) {
+          fragment.appendChild(document.createTextNode(text.slice(lastIndex, match.index)));
+
+          var number = match[1];
+          var superscript = document.createElement('sup');
+          superscript.className = 'footnote-reference';
+
+          if (targets[number]) {
+            var link = document.createElement('a');
+            link.href = '#' + targets[number];
+            link.textContent = number;
+            link.setAttribute('role', 'doc-noteref');
+            link.setAttribute('aria-label', 'Footnote ' + number);
+            superscript.appendChild(link);
+          } else {
+            superscript.textContent = number;
+            superscript.setAttribute('aria-label', 'Footnote ' + number);
+          }
+
+          fragment.appendChild(superscript);
+          lastIndex = pattern.lastIndex;
+        }
+
+        fragment.appendChild(document.createTextNode(text.slice(lastIndex)));
+        textNode.parentNode.replaceChild(fragment, textNode);
+      });
+    }());
+  </script>
 
 </body>
 </html>
