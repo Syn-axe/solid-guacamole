@@ -350,6 +350,8 @@
     .footer-links { display: flex; align-items: center; gap: 0.55rem; }
     .footer-divider { color: var(--slate); font-size: 0.62rem; opacity: 0.45; }
 
+    .footer-mobile { display: none; }
+
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(16px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -390,12 +392,24 @@
       .signup-input { width: 100%; }
       .cta-primary { padding-inline: 1.2rem; }
       footer {
-        grid-template-columns: 1fr;
-        gap: 0.85rem;
-        padding: 1.25rem 1.8rem;
+        display: block;
+        padding: 0.9rem 1.2rem;
       }
-      .footer-disclaimer { font-size: 0.64rem; line-height: 1.45; }
-      .footer-meta { align-items: flex-start; gap: 0.4rem; }
+      .footer-disclaimer,
+      .footer-meta { display: none; }
+      .footer-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+        color: var(--slate);
+        font-size: 0.58rem;
+        letter-spacing: 0.035em;
+        white-space: nowrap;
+      }
+      .footer-mobile-links { display: flex; align-items: center; gap: 0.45rem; }
+      .footer-mobile a { color: var(--slate); text-decoration: none; }
     }
 
     @media (max-width: 360px) {
@@ -409,7 +423,6 @@
       .hero-sub, .hero-cta-group, .hero-bottom {
         animation: none; opacity: 1;
       }
-      #current-canvas { display: none; }
     }
   </style>
 </head>
@@ -461,6 +474,10 @@
         <a href="/Terms">Terms of Use</a>
       </div>
     </div>
+    <div class="footer-mobile" aria-label="Site information">
+      <span>© 2026 On Retainer · ABN 95 932 683 020</span>
+      <span class="footer-mobile-links"><a href="/Privacy">Privacy</a><span aria-hidden="true">·</span><a href="/Terms">Terms</a></span>
+    </div>
   </footer>
 
   <script>
@@ -496,6 +513,8 @@
     */
 
     var HORIZON = 0.58; /* 58% down the viewport */
+    var IS_MOBILE = false;
+    var REDUCE_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     function Ripple(normY) {
       /* normY: 0 = at horizon, 1 = bottom of screen */
@@ -518,17 +537,18 @@
       var isLight = Math.random() > 0.45;
       if (isLight) {
         this.r = 201; this.g = 168; this.b = 76;  /* signal gold */
-        this.opacity = 0.025 + p * 0.055;
+        this.opacity = (0.025 + p * 0.055) * (IS_MOBILE ? 2.1 : 1);
       } else {
         this.r = 18;  this.g = 30;  this.b = 55;  /* deep navy */
-        this.opacity = 0.08  + p * 0.14;
+        this.opacity = (0.08 + p * 0.14) * (IS_MOBILE ? 1.45 : 1);
       }
     }
 
     function init() {
       W = canvas.width  = window.innerWidth;
       H = canvas.height = window.innerHeight;
-      HORIZON = W <= 700 ? 0.46 : 0.58;
+      IS_MOBILE = W <= 700;
+      HORIZON = IS_MOBILE ? 0.56 : 0.58;
       ripples = [];
 
       /*
@@ -560,7 +580,7 @@
         W * 0.6, H * HORIZON,   0,
         W * 0.6, H * HORIZON,   W * 0.9
       );
-      skyGrad.addColorStop(0,   'rgba(22,28,38,0.55)');  /* very dark blue-grey bloom */
+      skyGrad.addColorStop(0, IS_MOBILE ? 'rgba(26,34,47,0.72)' : 'rgba(22,28,38,0.55)');  /* very dark blue-grey bloom */
       skyGrad.addColorStop(0.4, 'rgba(13,14,15,0.3)');
       skyGrad.addColorStop(1,   'rgba(13,14,15,0)');
 
@@ -579,16 +599,16 @@
       /* Glow above the line */
       var glowAbove = ctx.createLinearGradient(0, hY - 30, 0, hY);
       glowAbove.addColorStop(0, 'rgba(30,42,60,0)');
-      glowAbove.addColorStop(1, 'rgba(30,42,60,0.18)');
+      glowAbove.addColorStop(1, IS_MOBILE ? 'rgba(38,52,72,0.30)' : 'rgba(30,42,60,0.18)');
       ctx.fillStyle = glowAbove;
       ctx.fillRect(0, hY - 30, W, 30);
 
       /* The line itself — horizontal gradient */
       var lineGrad = ctx.createLinearGradient(0, 0, W, 0);
       lineGrad.addColorStop(0,    'rgba(40,55,75,0)');
-      lineGrad.addColorStop(0.2,  'rgba(50,68,90,0.35)');
-      lineGrad.addColorStop(0.55, 'rgba(60,80,100,0.55)');
-      lineGrad.addColorStop(0.8,  'rgba(50,68,90,0.3)');
+      lineGrad.addColorStop(0.2, IS_MOBILE ? 'rgba(58,78,102,0.48)' : 'rgba(50,68,90,0.35)');
+      lineGrad.addColorStop(0.55, IS_MOBILE ? 'rgba(72,94,118,0.76)' : 'rgba(60,80,100,0.55)');
+      lineGrad.addColorStop(0.8, IS_MOBILE ? 'rgba(58,78,102,0.44)' : 'rgba(50,68,90,0.3)');
       lineGrad.addColorStop(1,    'rgba(40,55,75,0)');
 
       ctx.beginPath();
@@ -600,7 +620,7 @@
 
       /* Very faint glow below the line — light on water near horizon */
       var glowBelow = ctx.createLinearGradient(0, hY, 0, hY + 40);
-      glowBelow.addColorStop(0, 'rgba(30,45,65,0.12)');
+      glowBelow.addColorStop(0, IS_MOBILE ? 'rgba(38,56,78,0.22)' : 'rgba(30,45,65,0.12)');
       glowBelow.addColorStop(1, 'rgba(13,14,15,0)');
       ctx.fillStyle = glowBelow;
       ctx.fillRect(0, hY, W, 40);
@@ -642,12 +662,24 @@
     }
 
     init();
-    render();
+    if (REDUCE_MOTION) {
+      drawAtmosphere();
+      drawHorizon();
+      drawRipples();
+    } else {
+      render();
+    }
 
     window.addEventListener('resize', function () {
       cancelAnimationFrame(raf);
       init();
-      raf = requestAnimationFrame(render);
+      if (REDUCE_MOTION) {
+        drawAtmosphere();
+        drawHorizon();
+        drawRipples();
+      } else {
+        raf = requestAnimationFrame(render);
+      }
     });
 
     /* ── Scroll fade — canvas opacity reduces as user leaves hero ── */
