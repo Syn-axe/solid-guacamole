@@ -298,6 +298,8 @@
     .footer-mark { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--slate); opacity: 0.8; white-space: nowrap; flex-shrink: 0; text-decoration: none; transition: color 0.25s, opacity 0.25s; }
     .footer-mark:hover { color: var(--signal); opacity: 1; }
 
+    .footer-mobile { display: none; }
+
     @media (max-width: 700px) {
       nav { padding: 0.75rem 1.8rem; }
       .logo { min-height: 2.75rem; display: flex; align-items: center; }
@@ -315,6 +317,21 @@
       .article-aside { flex-direction: row; align-items: center; margin-top: 0.8rem; }
       footer { flex-direction: column; align-items: flex-start; gap: 1rem; }
       .footer-brand { align-items: flex-start; }
+      footer { display: block; padding: 0.9rem 1.2rem; }
+      .disclaimer, .footer-brand { display: none; }
+      .footer-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        width: 100%;
+        color: var(--slate);
+        font-size: 0.58rem;
+        letter-spacing: 0.035em;
+        white-space: nowrap;
+      }
+      .footer-mobile-links { display: flex; align-items: center; gap: 0.45rem; }
+      .footer-mobile a { color: var(--slate); text-decoration: none; }
     }
   </style>
 </head>
@@ -381,6 +398,10 @@
         <span class="footer-divider">|</span>
         <a href="/Terms">Terms of Use</a>
       </div>
+    </div>
+    <div class="footer-mobile" aria-label="Site information">
+      <span>© 2026 On Retainer · ABN 95 932 683 020</span>
+      <span class="footer-mobile-links"><a href="/Privacy">Privacy</a><span aria-hidden="true">·</span><a href="/Terms">Terms</a></span>
     </div>
   </footer>
 
