@@ -15,7 +15,8 @@ date: 2026-07-08
   <p>Australian law currently recognises two approaches depending on the applicable legislative framework:</p>
   <p><strong>The common law test</strong></p>
   <ul>
-  <li>Focuses on the legal rights and obligations established by the parties contract.<li>
+  <li>Focuses on the legal rights and obligations established by the parties contract.</li>
+  </ul>
   <p><strong>The statutory whole-of-relationship test</strong></p>
   <ul>
   <li>Considers the practical reality and true nature of the whole relationship in its totality.</li>
