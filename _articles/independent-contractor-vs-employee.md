@@ -13,7 +13,6 @@ date: 2026-07-08
   <p class="quick-answer-label">Quick Answer</p>
   <p>Whether a worker is an employee or an independent contractor depends upon the legal character of the relationship between the parties.</p>
   <p>Australian law currently recognises two approaches depending on the applicable legislative framework:</p>
-  <dl>
 <p>
   <strong>Common law test</strong><br>
   Focuses on the legal rights and obligations created by the parties' contract.
@@ -23,7 +22,6 @@ date: 2026-07-08
   <strong>Statutory whole-of-relationship test</strong><br>
   Considers the practical reality and true nature of the relationship.
 </p>
-
   <p>Although the tests examine different aspects of the relationship, the relevant considerations for both commonly include:</p>
    <ul>
     <li>the level of control exercised;</li>
