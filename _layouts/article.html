@@ -179,6 +179,11 @@
       gap: var(--sp-2);
     }
 
+    .meta-item--risk {
+      align-items: center;
+      text-align: center;
+    }
+
     .meta-label {
       font-size: 0.58rem;
       font-weight: 600;
@@ -203,13 +208,35 @@
       font-size: 0.66rem;
     }
 
-    /* Risk badge — no border, just muted text */
+    /* Risk badge — centered and colour-coded by risk level */
     .meta-value--risk {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       font-size: 0.66rem;
+      font-weight: 600;
       letter-spacing: 0.1em;
       text-transform: uppercase;
+      min-width: 5.5rem;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid currentColor;
+      background: rgba(158, 158, 147, 0.1);
       color: var(--slate);
-      opacity: 0.55;
+    }
+
+    .meta-value--risk-low {
+      color: #67C587;
+      background: rgba(103, 197, 135, 0.1);
+    }
+
+    .meta-value--risk-medium {
+      color: #E2C35B;
+      background: rgba(226, 195, 91, 0.1);
+    }
+
+    .meta-value--risk-high {
+      color: #E06B6B;
+      background: rgba(224, 107, 107, 0.1);
     }
 
     /* ─── ARTICLE BODY ─── */
@@ -697,9 +724,10 @@
           <span class="meta-label">Published</span>
           <span class="meta-value">{{ page.date | date: "%-d %B %Y" }}</span>
         </div>
-        <div class="meta-item">
+        <div class="meta-item meta-item--risk">
           <span class="meta-label">Risk</span>
-          <span class="meta-value--risk">{{ page.risk }}</span>
+          {% assign risk_level = page.risk | downcase | strip %}
+          <span class="meta-value--risk meta-value--risk-{{ risk_level }}">{{ page.risk }}</span>
         </div>
       </div>
     </div>
