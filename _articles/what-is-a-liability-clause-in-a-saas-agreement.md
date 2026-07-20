@@ -45,7 +45,7 @@ An **exclusion of liability** clause which removes liability for a certain categ
 
 The leading Australian authority on the interpretation of exclusion and limitation clauses is *Darlington Futures Ltd v Delco Australia Pty Ltd* (1986) 161 CLR 500, a decision of the High Court of Australia.[^1]
 
-In this case the High Court of Australia confirmed that exclusion and limitation clauses are to be interpreted according to their natural and ordinary meaning, read in the context of the contract as a whole.[^2] Where ambiguity remains after applying ordinary principles of contractual interpretation, the *contra proferentem* rule may apply, being that the clause is construed against the party seeking to rely on it.[^3]
+In this case the High Court of Australia confirmed that exclusion and limitation clauses are to be interpreted according to their natural and ordinary meaning, read in the context of the contract as a whole.[^2] Where ambiguity remains after applying ordinary principles of contractual interpretation, the *contra proferentem* rule may apply as a last resort, being that the clause is construed against the party seeking to rely on it.[^3]
 
 Australian courts will give effect to exclusion and limitation clauses according to their clear terms and will not construe them as extending beyond what is expressed in clear and unambiguous language, read in context.[^4]
 
