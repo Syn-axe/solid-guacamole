@@ -16,7 +16,6 @@ date: 2026-07-08
   <p><strong>The common law test</strong></p>
   <ul>
   <li>Focuses on the legal rights and obligations established by the parties contract.<li>
-  </ul>
   <p><strong>The statutory whole-of-relationship test</strong></p>
   <ul>
   <li>Considers the practical reality and true nature of the whole relationship in its totality.</li>
