@@ -57,7 +57,7 @@ The distinction is significant because employees and independent contractors are
 
 ## How do Australian courts determine whether someone is an employee or contractor?
 
-Whether a worker is an employee or an independent contractor depends on the nature of the relationship between the parties. Australian law currently recognises two legal tests for determining whether a worker is an employee or an independent contractor:
+Whether a worker is an employee or an independent contractor depends on the nature of the relationship between the parties. Australian law currently recognises two approaches for determining whether a worker is an employee or an independent contractor:
 
 - **Common law test** – which focuses on the legal rights and obligations created by the parties' contractual terms.
 - **Statutory test** – which requires a broader assessment of the real substance, practical reality and true nature of the relationship as a whole.
@@ -70,7 +70,7 @@ Where the parties have comprehensively committed the terms of their relationship
 
 The contract must be construed as a whole. No individual provision is determinative. Rather, the court undertakes an objective assessment of the contractual rights and obligations in their entirety to determine whether they establish a relationship of employment or one of independent contracting.[^3]
 
-Outside the Act, whether a person is an employee will generally depend on the applicable legislation. Where no statute provides a different test or definition, the common law principles continue to apply.
+Outside the Fair Work Act, the applicable test will depend upon the legislation governing the issue. Where no statute prescribes a different approach or definition, the common law principles continue to apply.
 
 ### What is the statutory test?
 
