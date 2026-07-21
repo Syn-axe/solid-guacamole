@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Are your contractors actually employees?"
-summary: "Misclassifying a worker can expose a business to significant legal and financial consequences. This article examines the distinction between employees and independent contractors under Australian law."
+summary: "Independent Contractor (Contractors) arrangements provide businesses with flexibility and access to specialist talent without the associated employment overheads. However, misclassifying a worker can expose a business to significant legal and financial consequences. This article examines the distinction between employees and Contractors by considering the common law, the statutory framework under the Fair Work Act 2009 (Cth) and the key indicators relevant to determining a worker's legal status."
 category: Employment
 cat_color: "#C8B89A"
 read_time: 6 min read
@@ -12,7 +12,7 @@ slug: independent-contractor-vs-employee
 
 <div class="quick-answer">
   <p class="quick-answer-label">Quick Answer</p>
-  <p>Whether a worker is an employee or a Contractor depends on the legal character of the relationship between the parties. The method used to determine that legal character depends on the applicable legal framework. While Australian legislation adopts different approaches for particular purposes, employment status for the purposes of the common law and the <a href="https://www.austlii.edu.au/cgi-bin/viewdb/au/legis/cth/consol_act/fwa2009114/"><em>Fair Work Act 2009</em></a> (Cth) is determined by applying either the <strong>common law test</strong> or the <strong>statutory whole-of-relationship test</strong>. Although each test adopts a different approach, both commonly examine indicia including the level of control exercised, the worker's degree of independence, the allocation of commercial risk, whether the worker is operating an independent business, and the rights and obligations between the parties.</p>
+  <p>Whether a worker is an employee or a Contractor depends on the legal character of the relationship between the parties. The method used to determine that legal character depends on the applicable legal framework. While Australian legislation adopts different approaches for particular purposes, employment status for the purposes of the common law and the <a href="https://www.austlii.edu.au/cgi-bin/viewdb/au/legis/cth/consol_act/fwa2009114/"><em>Fair Work Act 2009</em></a> (Cth) is determined by applying either the <strong>common law test</strong> or the <strong>statutory whole-of-relationship test</strong>. Although each test adopts a different approach, both commonly examine indicia including the level of control exercised, the worker's degree of independence, the allocation of commercial risk, whether the worker is operating an independent business and the rights and obligations between the parties.</p>
 </div>
 
 ## Introduction
