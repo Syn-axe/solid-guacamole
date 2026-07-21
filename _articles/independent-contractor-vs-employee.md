@@ -48,7 +48,7 @@ Australian law recognises two principal approaches to determining whether a work
 
 Under the common law, Australian Courts are required to determine whether a worker is an employee or an independent contractor by examining the legal rights and obligations created by the parties' contract.[^3]
 
-Where the parties have comprehensively committed the terms of their relationship to a written contract, the inquiry is directed to the rights and obligations established by that contract.[^4] The contract must be construed as a whole and no individual provision is determinative. Rather, the court objectively assesses the contractual rights and obligations in their entirety to determine whether they establish a relationship of employment or one of independent contracting.[^5]
+Where the parties have comprehensively committed the terms of their relationship to a written contract, the inquiry is directed to the rights and obligations established by that contract.[^4] Consistent with ordinary principles of contractual interpretation, the Court must objectively assess those rights and obligations to determine whether they establish a relationship of employment or one of independent contracting.[^5]
 
 For questions arising outside the [*Fair Work Act 2009*](https://www.austlii.edu.au/cgi-bin/viewdb/au/legis/cth/consol_act/fwa2009114/) (Cth), the applicable legislation should be considered to determine whether a statutory test or definition applies. Where no statute provides otherwise, the common law principles continue to govern the classification of the relationship.
 
