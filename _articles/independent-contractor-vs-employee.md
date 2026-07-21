@@ -104,7 +104,7 @@ Is the worker responsible for delivering the contracted result and bearing the c
 
 Getting the distinction between an employee and Contractor wrong can create unexpected costs and compliance issues for a business.
 
-Where a worker is incorrectly treated as an independent contractor, the business may face obligations it did not anticipate, including potential liability for unpaid superannuation, taxation obligations, leave entitlements and penalties.[^9]
+Misclassifying a worker as a Contractor can expose the business may face obligations it did not anticipate, including potential liability for unpaid superannuation, taxation obligations, leave entitlements and penalties.[^9]
 
 For growing businesses, these risks often increase as working relationships evolve over time. Regularly reviewing Contractor arrangements helps ensure they remain appropriately structured and compliant with the applicable legal framework.
 
