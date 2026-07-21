@@ -19,7 +19,7 @@ slug: independent-contractor-vs-employee
 
 Engaging a Contractor can provide businesses with access to specialist expertise, greater operational flexibility and the ability to manage fluctuating workloads without expanding their permanent workforce. However, these arrangements frequently evolve over time. A worker who is initially engaged as a Contractor may ultimately perform their role in a manner more consistent with employment. When that occurs, the legal characterisation of the relationship may become contentious.
 
-Determining whether a worker is an employee or an independent contractor (**Contractor**) has become increasingly significant following recent reforms to the [*Fair Work Act 2009*](https://www.austlii.edu.au/cgi-bin/viewdb/au/legis/cth/consol_act/fwa2009114/) (Cth) (**Act**), which introduced a statutory framework alongside the existing common law principles. While other Australian legislation may adopt different statutory definitions or deeming provisions for their particular purposes, this article focuses on the common law and the statutory framework established by the Act.
+Determining whether a worker is an employee or a Contractor has become increasingly significant following recent reforms to the [*Fair Work Act 2009*](https://www.austlii.edu.au/cgi-bin/viewdb/au/legis/cth/consol_act/fwa2009114/) (Cth) (**Act**), which introduced a statutory framework alongside the existing common law principles. While other Australian legislation may adopt different statutory definitions or deeming provisions for their particular purposes, this article focuses on the common law and the statutory framework established by the Act.
 
 ## What is the difference between an employee and a contractor?
 
