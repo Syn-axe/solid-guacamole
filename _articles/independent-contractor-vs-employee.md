@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "Are your contractors actually employees?"
-summary: "Independent Contractor (Contractors) arrangements provide businesses with flexibility and access to specialist talent without the associated employment overheads. However, misclassifying a worker can expose a business to significant legal and financial consequences. This article examines the distinction between employees and Contractors by considering the common law, the statutory framework under the Fair Work Act 2009 (Cth) and the key indicators relevant to determining a worker's legal status."
+summary: "Independent Contractor (<strong>Contractors</strong>) arrangements provide businesses with flexibility and access to specialist talent without the associated employment overheads. However, misclassifying a worker can expose a business to significant legal and financial consequences. This article examines the distinction between employees and Contractors by considering the common law, the statutory framework under the Fair Work Act 2009 (Cth) and the key indicators relevant to determining a worker's legal status."
 category: Employment
 cat_color: "#C8B89A"
 read_time: 6 min read
