@@ -72,7 +72,7 @@ In effect, [s 15AA](https://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/cons
 
 Section [15AA](https://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/fwa2009114/s15aa.html) of the Act does not replace the common law test in all contexts. Rather, it applies only for the purposes of the [*Fair Work Act 2009*](https://www.austlii.edu.au/cgi-bin/viewdb/au/legis/cth/consol_act/fwa2009114/) (Cth). Where the question of employment status arises outside that Act, the applicable test will depend on the governing legislation or, where no statutory test applies, the common law.
 
-Additionally, [s 15AB](https://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/fwa2009114/s15ab.html) of the Act permits certain high-income Contractors to opt out of the statutory whole-of-relationship test. Where a valid opt-out notice has been given, the relationship is instead assessed under the common law test.
+Additionally, [s 15AB](https://www.austlii.edu.au/cgi-bin/viewdoc/au/legis/cth/consol_act/fwa2009114/s15ab.html) of the Act permits certain high-income Contractors to opt out of the statutory whole-of-relationship test. Where a valid opt-out notice has been given, the relationship is instead assessed under the common law.
 
 | **Situation** | **Test that applies** |
 |---|---|
