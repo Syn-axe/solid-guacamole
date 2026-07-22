@@ -110,7 +110,7 @@ For growing businesses, these risks often increase as working relationships evol
 
 ## What does this mean in practice?
 
-A Contractor agreement does not, by itself, create an independent contractor relationship. The legal character of the relationship will depend on the applicable legal test and the rights and obligations established between the parties.
+Entering into a contract for services does not, by itself, create an independent contractor relationship. Ultimately, whether a worker is an employee or an independent contractor depends on the legal character of the relationship as determined under the applicable legal test.
 
 For advice specific to your circumstances, consult a qualified Australian legal practitioner.
 
