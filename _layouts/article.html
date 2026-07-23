@@ -479,7 +479,27 @@
     /* ─── FOOTNOTES — Kramdown native output ─── */
 
     /* Wrapper div.footnotes — becomes the Further Reading section */
+    /*
+      Kramdown emits footnotes at the end of the article. Keeping the body as a
+      flex column lets a Markdown `## Further Reading` section remain in the
+      article source while displaying after the generated references.
+    */
+    .article-body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .article-body > #further-reading,
+    .article-body > #further-reading ~ * {
+      order: 2;
+    }
+
+    .article-body > #further-reading ~ div.footnotes {
+      order: 1;
+    }
+
     .article-body div.footnotes {
+      order: 1;
       margin-top: var(--sp-24);
       padding-top: var(--sp-8);
       border-top: 1px solid var(--border-faint);
@@ -487,7 +507,7 @@
 
     /* "Further Reading" label generated via ::before */
     .article-body div.footnotes::before {
-      content: 'Further Reading';
+      content: 'References';
       display: block;
       font-family: 'Archivo', sans-serif;
       font-size: 0.58rem;
