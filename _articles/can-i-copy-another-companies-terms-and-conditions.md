@@ -5,7 +5,7 @@ summary: "With large language models enabling entrepreneurs and founders to laun
 category: Commercial Contracts
 cat_color: "#C8B89A"
 read_time: 5 min read
-risk: Medium Risk
+risk: Low Risk
 date: 2026-07-22
 ---
 
